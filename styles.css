@@ -307,37 +307,12 @@ header {
     display: grid;
     gap: 2rem;
 }
-/*Floating Card for the skill*/
-.floating-card {
-    background: white;
-    padding: 1.5rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    position: relative;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.floating-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 5px;
-    background: var(--gradient);
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
-}
-
-.floating-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
 
 .skill-category {
-    
+    background: white;
     padding: 1.5rem;
-   
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .skill-category h4 {
@@ -392,27 +367,7 @@ header {
         opacity: 1;
     }
 }
-/* Floating Item for the skill*/
-.floating-item {
-    background: #f8fafc;
-    padding: 0.8rem 1rem;
-    border-radius: 12px;
-    position: relative;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-}
 
-.floating-item:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-/*Skill Icon Style */
-.skill-icon {
-    margin-right: 0.5rem;
-    font-size: 1.1rem;
-    color: var(--primary-color);
-    vertical-align: middle;
-}
 /* Contact Section Styling */
 .contact-section h2 {
     color: var(--dark-color);
@@ -698,255 +653,180 @@ footer p {
         opacity: 1;
         transform: translateY(0);
     }
-/* Skills Styling */
-.skills-container {
-    display: grid;
-    gap: 2rem;
 }
-/*Floating Card for the skill*/
-.floating-card {
-    background: white;
-    padding: 1.5rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    position: relative;
+
+.project-card {
+    animation: fadeIn 0.6s ease-out forwards;
+}
+
+/* Enhance accessibility */
+.btn:focus, .nav-link:focus {
+    outline: 3px solid rgba(37, 99, 235, 0.5);
+    outline-offset: 2px;
+}
+
+/* Hero Section */
+.hero-section {
+    padding: 3rem 0;
+}
+
+.profile-img-container {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    border-radius: 50%;
     overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 4px solid var(--primary-color);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
-.floating-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
+
+.profile-img {
     width: 100%;
-    height: 5px;
-    background: var(--gradient);
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
+    height: 100%;
+    object-fit: cover;
 }
 
-.floating-card:hover {
+.typed-container {
+    margin: 1rem 0;
+}
+
+.typed-text {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.hero-buttons .btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.hero-buttons .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* About Section */
+.about-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    transition: transform 0.3s ease;
+}
+
+.about-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-.skill-category {
-    
-    padding: 1.5rem;
-   
-}
-
-.skill-category h4 {
+.about-card h2 {
     color: var(--dark-color);
     margin-bottom: 1.5rem;
-    display: flex;
-    align-items: center;
-    font-size: 1.2rem;
+    font-size: 1.75rem;
 }
 
-.skill-category h4 i {
-    margin-right: 0.8rem;
+.about-card i {
     color: var(--primary-color);
 }
 
-.skill-items {
+.skills-list {
     display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
 }
 
 .skill-item {
-    display: grid;
-    gap: 0.5rem;
-}
-
-.skill-name {
-    color: var(--text-dark);
-    font-weight: 500;
-}
-
-.skill-level {
-    height: 8px;
-    background: #e2e8f0;
-    border-radius: 4px;
-    overflow: hidden;
-}
-
-.skill-progress {
-    height: 100%;
-    background: var(--gradient);
-    border-radius: 4px;
-    transition: width 1s ease-in-out;
-    animation: progressAnimation 1.5s ease-out forwards;
-}
-
-@keyframes progressAnimation {
-    from {
-        width: 0;
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-/* Floating Item for the skill*/
-.floating-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem;
     background: #f8fafc;
-    padding: 0.8rem 1rem;
-    border-radius: 12px;
-    position: relative;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-}
-
-.floating-item:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-/*Skill Icon Style */
-.skill-icon {
-    margin-right: 0.5rem;
-    font-size: 1.1rem;
-    color: var(--primary-color);
-    vertical-align: middle;
-}
-
-/* Download Resume Section */
-.download-resume-section {
-    margin-top: 4rem;
-    padding-top: 3rem;
-    border-top: 2px solid #e2e8f0;
-}
-
-.download-resume-section h2 {
-    color: var(--dark-color);
-    font-weight: 700;
-    position: relative;
-}
-
-.download-resume-section h2:after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60px;
-    height: 4px;
-    background: var(--gradient);
-    border-radius: 2px;
-}
-
-.download-btn {
-    margin-top: 2rem;
-    padding: 1rem 2rem;
-    font-size: 1.1rem;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    border-radius: 50px;
-    background: var(--gradient);
-    border: none;
+    border-radius: 8px;
     transition: all 0.3s ease;
+}
+
+.skill-item:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+.skill-item i {
+    font-size: 1.25rem;
+}
+
+.skill-item:hover i {
+    color: white;
+}
+
+/* Quick Links Section */
+.quick-link-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    transition: all 0.3s ease;
 }
 
-.download-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+.quick-link-card:hover {
+    transform: translateY(-5px);
 }
 
-.download-btn i {
-    font-size: 1.2rem;
-    margin-right: 0.75rem;
-    transition: transform 0.3s ease;
+.quick-link-card i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
 }
 
-.download-btn:hover i {
+.quick-link-card h3 {
+    color: var(--dark-color);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.quick-link-card p {
+    color: #64748b;
+    margin-bottom: 1.5rem;
+}
+
+.quick-link-card .btn {
+    border-radius: 50px;
+    padding: 0.5rem 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.quick-link-card .btn:hover {
     transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
+/* Responsive Adjustments */
 @media (max-width: 768px) {
-    .download-resume-section {
-        margin-top: 3rem;
-        padding-top: 2rem;
+    .hero-section {
+        padding: 2rem 0;
     }
     
-    .download-btn {
-        padding: 0.75rem 1.5rem;
-        font-size: 1rem;
-    }
-}
-/* Responsive Design */
-@media (max-width: 768px) {
-    .project-card {
-        margin-bottom: 2rem;
+    .profile-img-container {
+        width: 150px;
+        height: 150px;
     }
     
-    .projects-section h2 {
-        font-size: 1.75rem;
-    }
-    
-    .card-text {
-        font-size: 0.9rem;
-    }
-    
-    .tech-stack .badge {
-        font-size: 0.75rem;
-        padding: 0.4rem 0.8rem;
-    }
-    
-    .section-title {
-        font-size: 1.5rem;
-    }
-    
-    .timeline-content {
-        padding: 1rem;
-    }
-    
-    .skills-container {
-        gap: 1.5rem;
-    }
-    
-    .skill-category {
-        padding: 1rem;
-    }
-    
-    .skill-category h4 {
-        font-size: 1.1rem;
-    }
-}
-
-@media (max-width: 576px) {
-    .navbar-brand {
+    .typed-text {
         font-size: 1.25rem;
     }
     
-    .projects-section h2 {
-        font-size: 1.5rem;
+    .skills-list {
+        grid-template-columns: 1fr;
     }
     
-    .btn {
-        padding: 0.5rem 1rem;
-        font-size: 0.85rem;
-    }
-    
-    .project-card .card-title {
-        font-size: 1.1rem;
-    }
-}
-
-@media (min-width: 768px) {
-    .skills-container {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    }
-}
-
-/* Animations */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
+    .hero-buttons .btn {
+        display: block;
+        margin: 1rem auto;
+        width: 80%;
     }
 }
