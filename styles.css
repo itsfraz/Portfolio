@@ -7,11 +7,15 @@
     --text-dark: #334155;
     --text-light: #94a3b8;
     --gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    --shadow-light: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-medium: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-dark: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
 /* Global Styles */
 html {
     height: 100%;
+    scroll-behavior: smooth; /* For smooth scrolling */
 }
 
 body {
@@ -28,13 +32,17 @@ body {
 
 main {
     flex: 1;
+    padding-bottom: 2rem; /* Add some padding at the bottom */
 }
 
 /* Header and Navigation */
 header {
     background: var(--gradient);
     padding: 1rem;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-light);
+    position: sticky; /* Make the header sticky */
+    top: 0;
+    z-index: 1000; /* Ensure it stays on top */
 }
 
 .navbar-dark {
@@ -54,7 +62,7 @@ header {
     font-size: 0.9rem;
     letter-spacing: 0.5px;
     padding: 0.5rem 1rem !important;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, transform 0.2s ease;
 }
 
 .nav-link:hover {
@@ -62,23 +70,31 @@ header {
     transform: translateY(-1px);
 }
 
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+
 /* Project Cards */
 .project-card {
     border: none;
     border-radius: 12px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    box-shadow: var(--shadow-light);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     background: white;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
 .project-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    box-shadow: var(--shadow-dark);
 }
 
 .project-card .card-body {
     padding: 1.5rem;
+    flex-grow: 1; /* Ensure card-body takes up available space */
 }
 
 .project-card .card-title {
@@ -95,6 +111,12 @@ header {
 }
 
 /* Tech Stack Badges */
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap; /* Allow badges to wrap */
+    margin-top: 0.5rem;
+}
+
 .tech-stack .badge {
     background: var(--gradient);
     padding: 0.5rem 1rem;
@@ -105,11 +127,12 @@ header {
     margin: 0.25rem;
     border: none;
     transition: all 0.3s ease;
+    white-space: nowrap; /* Prevent badges from wrapping */
 }
 
 .tech-stack .badge:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-light);
 }
 
 /* Buttons */
@@ -120,6 +143,9 @@ header {
     letter-spacing: 0.5px;
     transition: all 0.3s ease;
     font-size: 1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .btn-primary {
@@ -137,7 +163,7 @@ header {
     border-color: transparent;
     color: white;
     transform: translateY(-3px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: var(--shadow-light);
 }
 
 .btn i {
@@ -180,6 +206,7 @@ header {
 .section-title i {
     margin-right: 1rem;
     color: var(--primary-color);
+    font-size: 1.5rem;
 }
 
 /* Timeline Styling */
@@ -219,7 +246,7 @@ header {
     background: white;
     padding: 1.5rem;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-light);
     transition: transform 0.3s ease;
 }
 
@@ -291,11 +318,11 @@ header {
     .experience-details li {
         font-size: 0.9rem;
     }
-    
+
     .timeline-content h4 {
         font-size: 1.1rem;
     }
-    
+
     .timeline-content .institution,
     .timeline-content .duration {
         font-size: 0.9rem;
@@ -312,7 +339,12 @@ header {
     background: white;
     padding: 1.5rem;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-light);
+     transition: transform 0.3s ease;
+}
+
+.skill-category:hover {
+    transform: translateY(-5px);
 }
 
 .skill-category h4 {
@@ -336,7 +368,12 @@ header {
 .skill-item {
     display: grid;
     gap: 0.5rem;
+    padding: 0.5rem; /* Add some padding to skill items */
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    background: #f8fafc; /* Add a background color to skill items */
 }
+
 
 .skill-name {
     color: var(--text-dark);
@@ -391,8 +428,13 @@ header {
     background: white;
     padding: 2rem;
     border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-light);
     height: 100%;
+     transition: transform 0.3s ease;
+}
+
+.contact-form-container:hover ,.social-links-container:hover {
+    transform: translateY(-5px);
 }
 
 .contact-form-container h3, .social-links-container h3 {
@@ -487,15 +529,15 @@ header {
     .social-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .contact-form-container, .social-links-container {
         padding: 1.5rem;
     }
-    
+
     .social-button {
         padding: 0.75rem;
     }
-    
+
     .social-button i {
         font-size: 1.25rem;
     }
@@ -536,12 +578,12 @@ header {
     background: var(--gradient);
     border: none;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-light);
 }
 
 .download-btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: var(--shadow-dark);
 }
 
 .download-btn i {
@@ -559,7 +601,7 @@ header {
         margin-top: 3rem;
         padding-top: 2rem;
     }
-    
+
     .download-btn {
         padding: 0.75rem 1.5rem;
         font-size: 1rem;
@@ -570,6 +612,7 @@ header {
 footer {
     background: var(--dark-color);
     padding: 0.8rem !important;
+    margin-top: auto; /* Push the footer to the bottom */
 }
 
 footer p {
@@ -583,36 +626,36 @@ footer p {
     .project-card {
         margin-bottom: 2rem;
     }
-    
+
     .projects-section h2 {
         font-size: 1.75rem;
     }
-    
+
     .card-text {
         font-size: 0.9rem;
     }
-    
+
     .tech-stack .badge {
         font-size: 0.75rem;
         padding: 0.4rem 0.8rem;
     }
-    
+
     .section-title {
         font-size: 1.5rem;
     }
-    
+
     .timeline-content {
         padding: 1rem;
     }
-    
+
     .skills-container {
         gap: 1.5rem;
     }
-    
+
     .skill-category {
         padding: 1rem;
     }
-    
+
     .skill-category h4 {
         font-size: 1.1rem;
     }
@@ -622,16 +665,16 @@ footer p {
     .navbar-brand {
         font-size: 1.25rem;
     }
-    
+
     .projects-section h2 {
         font-size: 1.5rem;
     }
-    
+
     .btn {
         padding: 0.5rem 1rem;
         font-size: 0.85rem;
     }
-    
+
     .project-card .card-title {
         font-size: 1.1rem;
     }
@@ -677,13 +720,31 @@ footer p {
     border-radius: 50%;
     overflow: hidden;
     border: 4px solid var(--primary-color);
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-light);
+    animation: pulse 2s infinite cubic-bezier(0.4, 0, 0.6, 1)
 }
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 var(--primary-color);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(37, 99, 235, 0.0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.0);
+    }
+}
+
 
 .profile-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.profile-img:hover{
+    transform: scale(1.1);
 }
 
 .typed-container {
@@ -706,7 +767,7 @@ footer p {
 
 .hero-buttons .btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: var(--shadow-light);
 }
 
 /* About Section */
@@ -714,7 +775,7 @@ footer p {
     background: white;
     padding: 2rem;
     border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-light);
     height: 100%;
     transition: transform 0.3s ease;
 }
@@ -727,10 +788,14 @@ footer p {
     color: var(--dark-color);
     margin-bottom: 1.5rem;
     font-size: 1.75rem;
+    display: flex;
+    align-items: center;
 }
 
-.about-card i {
+.about-card h2 i {
     color: var(--primary-color);
+    margin-right: 0.7rem;
+    font-size: 1.6rem;
 }
 
 .skills-list {
@@ -768,7 +833,7 @@ footer p {
     padding: 2rem;
     border-radius: 12px;
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-light);
     height: 100%;
     transition: all 0.3s ease;
 }
@@ -781,6 +846,18 @@ footer p {
     font-size: 2.5rem;
     color: var(--primary-color);
     margin-bottom: 1rem;
+    animation: iconBounce 2s infinite cubic-bezier(0.4, 0, 0.6, 1);
+}
+@keyframes iconBounce {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+         transform: translateY(-10px);
+    }
+    100% {
+         transform: translateY(0);
+    }
 }
 
 .quick-link-card h3 {
@@ -802,7 +879,7 @@ footer p {
 
 .quick-link-card .btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: var(--shadow-light);
 }
 
 /* Responsive Adjustments */
@@ -810,23 +887,58 @@ footer p {
     .hero-section {
         padding: 2rem 0;
     }
-    
+
     .profile-img-container {
         width: 150px;
         height: 150px;
     }
-    
+
     .typed-text {
         font-size: 1.25rem;
     }
-    
+
     .skills-list {
         grid-template-columns: 1fr;
     }
-    
+
     .hero-buttons .btn {
         display: block;
         margin: 1rem auto;
         width: 80%;
     }
+}
+
+/* Floating Card Styling */
+.floating-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.floating-card:hover {
+    transform: translateY(-5px);
+}
+
+.floating-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem;
+    border-radius: 8px;
+    background: #f8fafc;
+    transition: all 0.3s ease;
+}
+
+.floating-item:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+.skill-icon {
+    margin-right: 0.75rem; /* Space between icon and text */
+}
+.floating-item:hover .skill-icon {
+    color: white;
 }
