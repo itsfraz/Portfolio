@@ -86,10 +86,102 @@ header {
     display: flex;
     flex-direction: column;
 }
-
+.toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    color: white;
+    z-index: 1000;
+}
+.toast.success { background: #10b981; }
+.toast.error { background: #ef4444; }
 .project-card:hover {
     transform: translateY(-8px);
     box-shadow: var(--shadow-dark);
+}
+
+/* Dark Mode */
+.dark-mode {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+}
+
+.dark-mode .card,
+.dark-mode .contact-form-container,
+.dark-mode .social-links-container,
+.dark-mode .skill-category,
+.dark-mode .timeline-content,
+.dark-mode .about-card,
+.dark-mode .quick-link-card,
+.dark-mode .navbar-dark {
+    background-color: #2d2d2d;
+    color: #e0e0e0;
+    border-color: #404040;
+}
+
+.dark-mode .text-dark,
+.dark-mode .card-title,
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode h4,
+.dark-mode h5,
+.dark-mode h6 {
+    color: #6b13f8 !important;
+}
+
+.dark-mode .text-muted {
+    color: #a0a0a0 !important;
+}
+
+.dark-mode .skill-name,
+.dark-mode .card-text,
+.dark-mode .experience-details li,
+.dark-mode .institution,
+.dark-mode .duration {
+    color: #d0d0d0 !important;
+}
+
+.dark-mode .nav-link {
+    color: #e0e0e0 !important;
+}
+
+.dark-mode .btn-outline-primary {
+    border-color: #3b82f6;
+    color: #3b82f6;
+}
+
+.dark-mode .btn-outline-primary:hover {
+    color: #ffffff;
+}
+
+.dark-mode .form-control {
+    background-color: #383838;
+    border-color: #404040;
+    color: #ffffff;
+}
+
+.dark-mode .form-control:focus {
+    background-color: #404040;
+    color: #ffffff;
+}
+
+.dark-mode .skill-item {
+    background-color: #383838 !important;
+}
+
+.dark-mode .skill-level {
+    background-color: #282828 !important;
+}
+
+.dark-mode .timeline:before {
+    background: #404040;
+}
+
+.dark-mode .section-title {
+    border-bottom-color: #3b82f6;
 }
 
 .project-card .card-body {
