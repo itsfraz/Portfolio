@@ -1588,11 +1588,11 @@ body.resume-page main {
 /* Skill Progress Bar Animation */
 .skill-progress {
     width: 0;
-    transition: width 0.7s cubic-bezier(.4,2,.6,1);
+    transition: width 1s cubic-bezier(.4, 0, .2, 1);
 }
+
 .skill-item.in-view .skill-progress {
-    /* JS should add .in-view when in viewport and set width inline */
-    transition: width 0.7s cubic-bezier(.4,2,.6,1);
+    width: var(--progress, 0%);
 }
 
 /* Section Scroll Animation Utility */
@@ -1958,8 +1958,6 @@ body, .card, .project-card, .modal-content, .section-title, .btn, .tech-stack .b
     100% { box-shadow: 0 0 0 0 rgba(59,130,246,0);}
 }
 
-/* Add to styles.css */
-
 /* Glassmorphism Navbar */
 .glass-navbar {
   background: rgba(30, 41, 59, 0.65);
@@ -2089,4 +2087,33 @@ body.dark-mode .nav-link {
 body.dark-mode .nav-link.nav-underline:hover,
 body.dark-mode .nav-link.nav-underline.active {
   color: #fbbf24 !important;
+}
+
+/* Glassmorphism Card Effect */
+.btn-glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    transition: all 0.3s ease;
+}
+
+.btn-glass:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.45);
+}
+
+/* Particles Container */
+.particles-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
 }

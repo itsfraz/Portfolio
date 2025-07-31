@@ -173,56 +173,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // 5. Project Filtering (Assuming 'projects.html' context)
-    const filterButtonsContainer = $('.filter-buttons');
-    const projectCards = $$('.project-card');
+    function initProjectFilter() {
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const projects = document.querySelectorAll('.project-card');
 
-    if (filterButtonsContainer && projectCards.length > 0) {
-        // Add filter buttons dynamically if they don't exist
-        if (!filterButtonsContainer.innerHTML.trim()) {
-             const techs = new Set();
-             projectCards.forEach(card => {
-                card.querySelectorAll('.tech-stack .badge').forEach(badge => techs.add(badge.textContent.trim()));
-             });
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const filter = btn.dataset.filter;
+                
+                // Update active button
+                filterButtons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
 
-             filterButtonsContainer.innerHTML = `
-                <button class="btn btn-outline-primary m-1 active" data-filter="all">All</button>
-                ${[...techs].sort().map(tech =>
-                    `<button class="btn btn-outline-primary m-1" data-filter="${tech}">${tech}</button>`
-                ).join('')}
-             `;
-        }
-
-        const filterButtons = $$('.filter-buttons .btn');
-
-        filterButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const filterValue = button.dataset.filter;
-
-                // Update active button state
-                filterButtons.forEach(btn => btn.classList.remove('active'));
-                button.classList.add('active');
-
-                // Filter cards
-                projectCards.forEach(cardContainer => {
-                    // Assuming card is direct child or nested within a column
-                    const card = cardContainer.querySelector('.card') || cardContainer;
-                    const badges = card.querySelectorAll('.tech-stack .badge');
-                    const cardTechs = Array.from(badges).map(badge => badge.textContent.trim());
-
-                    const shouldShow = filterValue === 'all' || cardTechs.includes(filterValue);
-
-                    // Target the container (e.g., the column div) for display none/block
-                    const parentColumn = card.closest('.col-md-6, .col-lg-4'); // Adjust selectors as needed
-                    if (parentColumn) {
-                       parentColumn.style.display = shouldShow ? '' : 'none';
-                    } else {
-                        card.style.display = shouldShow ? 'block' : 'none'; // Fallback
-                    }
-
+                // Filter projects
+                projects.forEach(project => {
+                    const techs = project.dataset.technologies.split(',');
+                    const shouldShow = filter === 'all' || techs.includes(filter);
+                    
+                    project.style.opacity = '0';
+                    setTimeout(() => {
+                        project.style.display = shouldShow ? 'block' : 'none';
+                        if (shouldShow) project.style.opacity = '1';
+                    }, 300);
                 });
             });
         });
     }
+    initProjectFilter();
+
 
     // 6. Project Card Modal Popup (Refined)
     const modalOverlay = document.createElement('div');
@@ -482,3 +460,28 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+// Lazy loading for images and animations
+const observerOptions = {
+    root: null,
+    rootMargin: '50px',
+    threshold: 0.1
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            if (entry.target.classList.contains('skill-item')) {
+                entry.target.classList.add('in-view');
+            }
+            if (entry.target.tagName === 'IMG') {
+                entry.target.src = entry.target.dataset.src;
+                entry.target.removeAttribute('data-src');
+            }
+            observer.unobserve(entry.target);
+        }
+    });
+}, observerOptions);
+
+// Observe elements
+document.querySelectorAll('[data-src], .skill-item').forEach(el => observer.observe(el));

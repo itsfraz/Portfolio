@@ -3,12 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <meta name="description" content="Mohd Faraj Ansari - Full Stack Developer Portfolio showcasing projects and skills">
+    <meta name="keywords" content="full stack developer, web development, portfolio, React, JavaScript">
+    <meta name="author" content="Mohd Faraj Ansari">
+    
+    <!-- Social Media Meta Tags -->
+    <meta property="og:title" content="Mohd Faraj Ansari - Portfolio">
+    <meta property="og:description" content="Full Stack Developer Portfolio">
+    <meta property="og:image" content="Resource/preview.png">
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Roboto:wght@400;500;700&display=swap" as="style">
+    
+    <!-- Existing CSS with optimization -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
+
+    <!-- Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR-GA-ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'YOUR-GA-ID');
+    </script>
 </head>
 <body>
     <header>
@@ -43,27 +64,27 @@
     </header>
     <main class="container mt-5">
         <!-- Hero Section -->
-        <section class="hero-section text-center mb-5">
-            <div class="profile-img-container mb-4">
-                <img src="Resource/profile.jpg" alt="Mohd Faraj Ansari" class="profile-img">
-            </div>
-            <h1 class="animate__animated animate__fadeInDown">Mohd Faraj Ansari</h1>
-            <div class="typed-container animate__animated animate__fadeIn">
-                <span class="typed-text">Full Stack Developer</span>
-            </div>
-            <p class="lead mt-4 animate__animated animate__fadeInUp">
-                Passionate about creating elegant solutions through code
-            </p>
-            <div class="hero-buttons mt-4">
-                <a href="projects.html" class="btn btn-outline-primary">
-                    <i class="fas fa-code mr-2"></i>View Projects
-                </a>
-                <a href="contact.html" class="btn btn-outline-primary">
-                    <i class="fas fa-envelope mr-2"></i>Get In Touch
-                </a>
-                <a href="#skills-section" class="btn btn-outline-primary">
-                    <i class="fas fa-tools mr-2"></i>View Skills
-                </a>
+        <section class="hero-section">
+            <div id="particles-js" class="particles-container"></div>
+            <div class="hero-content">
+                <div class="profile-img-container mb-4">
+                    <img src="Resource/profile.jpg" alt="Mohd Faraj Ansari" class="profile-img" loading="lazy">
+                </div>
+                <h1 class="animate__animated animate__fadeInDown">Mohd Faraj Ansari</h1>
+                <div class="typed-container animate__animated animate__fadeIn">
+                    <span class="typed-text"></span>
+                </div>
+                <p class="lead mt-4 animate__animated animate__fadeInUp">
+                    Passionate about creating elegant solutions through code
+                </p>
+                <div class="hero-buttons mt-4">
+                    <a href="projects.html" class="btn btn-glass">
+                        <i class="fas fa-code mr-2"></i>View Projects
+                    </a>
+                    <a href="contact.html" class="btn btn-glass">
+                        <i class="fas fa-envelope mr-2"></i>Get In Touch
+                    </a>
+                </div>
             </div>
         </section>
 
