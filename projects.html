@@ -4,86 +4,393 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Projects</title>
+    <!-- Bootstrap CSS -->
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     />
+    <!-- Animate.css -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
+    <!-- Google Fonts -->
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
     />
+    <!-- Font Awesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     />
-    <link rel="stylesheet" href="styles.css" />
+    <!-- Custom CSS -->
+    <style>
+      :root {
+        --primary-color: #6a11cb;
+        --secondary-color: #2575fc;
+        --dark-bg: #1a1a2e;
+        --card-bg: rgba(255, 255, 255, 0.1);
+        --border-color: rgba(255, 255, 255, 0.2);
+        --text-color: #f0f0f0;
+        --card-hover-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+      }
+
+      body {
+        font-family: "Roboto", sans-serif;
+        background: linear-gradient(135deg, var(--dark-bg), #16213e);
+        color: var(--text-color);
+        min-height: 100vh;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* Enhanced Glassmorphism Navbar */
+      .glass-navbar {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        border: 1px solid var(--border-color);
+        border-radius: 15px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        margin: 15px;
+      }
+
+      .navbar-brand {
+        font-weight: 700;
+        color: var(--text-color) !important;
+        display: flex;
+        align-items: center;
+      }
+
+      .navbar-brand i {
+        margin-right: 8px;
+        color: #ff6ec7; /* Optional: Color the icon */
+      }
+
+      .nav-link {
+        color: var(--text-color) !important;
+        transition: color 0.3s ease;
+        position: relative;
+      }
+
+      .nav-link:hover {
+        color: #ff6ec7 !important; /* Optional: Hover color */
+      }
+
+      /* Optional: Underline animation */
+      .nav-underline::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        display: block;
+        margin: 0 auto;
+        background: #ff6ec7;
+        transition: width 0.3s ease;
+        bottom: 0;
+        left: 0;
+        right: 0;
+      }
+      .nav-underline:hover::after {
+        width: 100%;
+      }
+
+      .dark-mode-toggle {
+        background: transparent;
+        border: 1px solid var(--border-color);
+        color: var(--text-color);
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .dark-mode-toggle:hover {
+        background: rgba(255, 255, 255, 0.2);
+        transform: scale(1.1);
+      }
+
+      /* Main Content */
+      main {
+        padding-top: 20px;
+        padding-bottom: 40px;
+      }
+
+      .projects-section h2 {
+        font-weight: 700;
+        margin-bottom: 2rem;
+        color: #fff;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Enhanced Project Cards */
+      .project-card {
+        background: var(--card-bg);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid var(--border-color);
+        border-radius: 15px;
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .project-card:hover {
+        transform: translateY(-10px);
+        box-shadow: var(--card-hover-shadow);
+        border-color: rgba(255, 255, 255, 0.3);
+      }
+
+      .card-img-top-placeholder {
+        height: 160px;
+        background: linear-gradient(
+          45deg,
+          #6a11cb,
+          #2575fc
+        ); /* Default gradient */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 3rem;
+        border-bottom: 1px solid var(--border-color);
+      }
+      /* Specific gradient for each project (optional) */
+      .project-1 .card-img-top-placeholder {
+        background: linear-gradient(45deg, #2193b0, #6dd5ed);
+      }
+      .project-2 .card-img-top-placeholder {
+        background: linear-gradient(45deg, #834d9b, #d04ed6);
+      }
+      .project-3 .card-img-top-placeholder {
+        background: linear-gradient(45deg, #00b09b, #96c93d);
+      }
+      .project-4 .card-img-top-placeholder {
+        background: linear-gradient(45deg, #ff5e62, #ff9966);
+      }
+      .project-5 .card-img-top-placeholder {
+        background: linear-gradient(45deg, #1d976c, #93f9b9);
+      }
+      .project-6 .card-img-top-placeholder {
+        background: linear-gradient(45deg, #5433ff, #20bdff, #a5fecb);
+      }
+      .project-7 .card-img-top-placeholder {
+        background: linear-gradient(45deg, #ff7e5f, #feb47b);
+      }
+      .project-8 .card-img-top-placeholder {
+        background: linear-gradient(45deg, #cc2b5e, #753a88);
+      }
+      .project-9 .card-img-top-placeholder {
+        background: linear-gradient(45deg, #3a7bd5, #00d2ff);
+      }
+      .project-10 .card-img-top-placeholder {
+        background: linear-gradient(45deg, #e53935, #e35d5b);
+      }
+      .project-11 .card-img-top-placeholder {
+        background: linear-gradient(45deg, #00c9ff, #92fe9d);
+      }
+      .project-12 .card-img-top-placeholder {
+        background: linear-gradient(45deg, #f85032, #e73827);
+      }
+
+      .card-body {
+        padding: 20px;
+        flex-grow: 1; /* Allow body to grow and push footer down */
+        display: flex;
+        flex-direction: column;
+      }
+
+      .card-title {
+        font-weight: 700;
+        margin-bottom: 15px;
+        font-size: 1.25rem; /* Slightly larger title */
+        color: #fff;
+      }
+
+      .card-text {
+        font-size: 0.9rem;
+        margin-bottom: 15px;
+        flex-grow: 1; /* Allow text to grow if needed */
+        color: #ddd;
+      }
+
+      .tech-stack {
+        margin-top: auto; /* Push tech stack to the bottom */
+        margin-bottom: 15px;
+      }
+
+      .badge {
+        background-color: rgba(255, 255, 255, 0.2);
+        color: var(--text-color);
+        border: 1px solid var(--border-color);
+        border-radius: 20px; /* More rounded */
+        padding: 5px 10px;
+        margin: 3px;
+        font-size: 0.75rem; /* Smaller badge text */
+        transition: background-color 0.2s ease, transform 0.2s ease;
+      }
+
+      .badge:hover {
+        background-color: rgba(255, 255, 255, 0.3);
+        transform: scale(1.05);
+      }
+
+      .card-footer {
+        padding: 15px 20px 20px 20px;
+        background: transparent !important;
+        border-top: 1px solid var(--border-color) !important;
+        display: flex;
+        justify-content: center; /* Center buttons horizontally */
+        gap: 10px; /* Add space between buttons */
+      }
+
+      .btn-outline-primary,
+      .btn-primary {
+        border-radius: 25px;
+        font-weight: 500;
+        padding: 6px 15px;
+        font-size: 0.85rem;
+        transition: all 0.3s ease;
+        border-width: 2px;
+      }
+
+      .btn-outline-primary {
+        border-color: #6a11cb;
+        color: #6a11cb;
+      }
+
+      .btn-outline-primary:hover {
+        background-color: #6a11cb;
+        color: white;
+        transform: translateY(-2px);
+      }
+
+      .btn-primary {
+        background: linear-gradient(
+          to right,
+          var(--primary-color),
+          var(--secondary-color)
+        );
+        border: none;
+        color: white;
+      }
+
+      .btn-primary:hover {
+        background: linear-gradient(
+          to right,
+          #5a0db9,
+          #1c68f0
+        ); /* Slightly darker on hover */
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      .btn i {
+        margin-right: 5px;
+      }
+
+      /* Enhanced Footer */
+      footer {
+        background: rgba(0, 0, 0, 0.2); /* Slightly darker footer */
+        backdrop-filter: blur(5px);
+        border-top: 1px solid var(--border-color);
+        padding: 20px 0;
+        color: #ccc;
+        font-size: 0.9rem;
+      }
+
+      /* Responsive Adjustments */
+      @media (max-width: 767px) {
+        .glass-navbar {
+          margin: 10px 5px; /* Smaller margin on mobile */
+          border-radius: 10px;
+        }
+        .card-img-top-placeholder {
+          height: 140px; /* Slightly smaller on mobile */
+        }
+        .card-title {
+          font-size: 1.15rem; /* Adjust title size on mobile */
+        }
+      }
+    </style>
   </head>
   <body>
     <!-- Modern Glassmorphism Navbar -->
     <header>
-      <nav
-        class="navbar navbar-expand-lg navbar-dark glass-navbar sticky-top py-2 px-3"
-      >
-        <a class="navbar-brand logo-animate" href="index.html">
-          <i class="fas fa-bolt"></i> Portfolio
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div
-          class="collapse navbar-collapse justify-content-end"
-          id="navbarNav"
-        >
-          <ul class="navbar-nav align-items-center">
-            <li class="nav-item">
-              <a class="nav-link nav-underline" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link nav-underline" href="resume.html">Resume</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link nav-underline" href="projects.html"
-                >Projects</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link nav-underline" href="contact.html">Contact</a>
-            </li>
-          </ul>
-          <button class="dark-mode-toggle ml-3" aria-label="Toggle dark mode">
-            <i class="fas fa-moon"></i>
+      <nav class="navbar navbar-expand-lg navbar-dark glass-navbar sticky-top">
+        <div class="container-fluid px-2">
+          <!-- Added container-fluid for better padding control -->
+          <a class="navbar-brand logo-animate" href="index.html">
+            <i class="fas fa-bolt"></i> Portfolio
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
           </button>
+          <div
+            class="collapse navbar-collapse justify-content-end"
+            id="navbarNav"
+          >
+            <ul class="navbar-nav align-items-center">
+              <li class="nav-item">
+                <a class="nav-link nav-underline" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link nav-underline" href="resume.html">Resume</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link nav-underline" href="projects.html"
+                  >Projects</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link nav-underline" href="contact.html"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+            <button class="dark-mode-toggle ml-3" aria-label="Toggle dark mode">
+              <i class="fas fa-moon"></i>
+            </button>
+          </div>
         </div>
       </nav>
     </header>
-    <main class="container mt-5">
-      <section class="projects-section animate__animated animate__fadeIn">
+
+    <main class="container py-5 animate__animated animate__fadeIn">
+      <!-- Added py-5 for vertical padding -->
+      <section class="projects-section">
         <h2 class="text-center mb-5">My Projects</h2>
         <div class="row">
           <!-- Project Client Business Website -->
-
           <div class="col-md-6 col-lg-4 mb-4">
-            <div class="card project-card h-100">
-              <div class="card-body floating-card">
-                <h5 class="card-title text-center">Client Business Website</h5>
+            <div class="card project-card h-100 project-1">
+              <div class="card-img-top-placeholder">
+                <i class="fas fa-horse"></i>
+                <!-- Icon representing equestrian -->
+              </div>
+              <div class="card-body">
+                <h4 class="card-title text-center">Client Business Website</h4>
                 <p class="card-text">
                   Welcome to Rahi Equestrian – a modern, visually stunning, and
                   fully responsive website for equestrian products and raw
-                  materials. It is built withTML, CSS, and JavaScript, ensuring compatibility across all
-                  devices.
-                   
+                  materials. It is built with HTML, CSS, and JavaScript,
+                  ensuring compatibility across all devices.
                 </p>
                 <div class="tech-stack">
                   <span class="badge badge-primary">HTML5</span>
@@ -93,15 +400,11 @@
                 </div>
               </div>
               <div class="card-footer bg-transparent border-0">
-                <!-- <a
-                  href="https://github.com/itsfraz/Client-Business-Website"
-                  class="btn btn-outline-primary mr-2"
-                >
-                  <i class="fab fa-github"></i> Code
-                </a> -->
                 <a
                   href="https://rahiequestrian.netlify.app/"
                   class="btn btn-primary"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <i class="fas fa-external-link-alt"></i> Live Demo
                 </a>
@@ -110,52 +413,20 @@
           </div>
 
           <!-- Habit Tracker App -->
-
           <div class="col-md-6 col-lg-4 mb-4">
-            <div class="card project-card h-100">
-              <div class="card-body floating-card">
-                <h5 class="card-title text-center">Habit Tracker App</h5>
-                <p class="card-text">
-                  The Habit Tracker App is a modern, user-friendly application
-                  designed to help users build and maintain healthy habits. With
-                  a sleek interface and powerful features, this app makes it easy
-                  to set goals, track progress, and stay motivated.
-                </p>
-                <div class="tech-stack">
-                  <span class="badge badge-primary">HTML5</span>
-                  <span class="badge badge-primary">CSS3</span>
-                  <span class="badge badge-primary">React</span>
-                  <span class="badge badge-primary">Bootstrap</span>
-                </div>
+            <div class="card project-card h-100 project-2">
+              <div class="card-img-top-placeholder">
+                <i class="fas fa-gamepad"></i>
+                <!-- Icon representing tracking -->
               </div>
-              <div class="card-footer bg-transparent border-0">
-                <!-- <a
-                  href="https://github.com/itsfraz/Client-Business-Website"
-                  class="btn btn-outline-primary mr-2"
-                >
-                  <i class="fab fa-github"></i> Code
-                </a> -->
-                <a
-                  href="https://habit-tracker-front.netlify.app/"
-                  class="btn btn-primary"
-                >
-                  <i class="fas fa-external-link-alt"></i> Live Demo
-                </a>
-              </div>
-            </div>
-          </div>
-               
-               <!-- Ninja To Do -->
-
-          <div class="col-md-6 col-lg-4 mb-4">
-            <div class="card project-card h-100">
-              <div class="card-body floating-card">
-                <h5 class="card-title text-center">Ninja To Do</h5>
+              <div class="card-body">
+                <h4 class="card-title text-center">Multiple game App</h4>
                 <p class="card-text">
-                  Ninja To Do is a modern, responsive to-do list app built with
-                  React, Redux, and Material-UI. It features user authentication,
-                  real-time updates, and a sleek design for efficient task
-                  management.
+                  ✨ The ultimate gaming experience with four exciting games in
+                  one place! ✨.🎯 Four Classic Games in one hub 🌈 Stunning UI
+                  with modern design 📱 Fully Responsive for all devices 🎨
+                  Beautiful Animations and effects 🔍 Search & Filter
+                  functionality 📊 Game Stats tracking
                 </p>
                 <div class="tech-stack">
                   <span class="badge badge-primary">HTML5</span>
@@ -165,15 +436,11 @@
                 </div>
               </div>
               <div class="card-footer bg-transparent border-0">
-                <!-- <a
-                  href="https://github.com/itsfraz/Ninja-To-Do"
-                  class="btn btn-outline-primary mr-2"
-                >
-                  <i class="fab fa-github"></i> Code
-                </a> -->
                 <a
-                  href="https://ninja-to-do.netlify.app/"
+                  href="https://gamehai.netlify.app/"
                   class="btn btn-primary"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <i class="fas fa-external-link-alt"></i> Live Demo
                 </a>
@@ -181,12 +448,50 @@
             </div>
           </div>
 
-                    <!-- Project Calculator -->
-
+          <!-- Ninja To Do -->
           <div class="col-md-6 col-lg-4 mb-4">
-            <div class="card project-card h-100">
-              <div class="card-body floating-card">
-                <h5 class="card-title text-center">Calculator</h5>
+            <div class="card project-card h-100 project-3">
+              <div class="card-img-top-placeholder">
+                <i class="fas fa-tasks"></i>
+                <!-- Icon representing tasks -->
+              </div>
+              <div class="card-body">
+                <h4 class="card-title text-center">Ninja To Do</h4>
+                <p class="card-text">
+                  Ninja To Do is a modern, responsive to-do list app built with
+                  React, Redux, and Material-UI. It features user
+                  authentication, real-time updates, and a sleek design for
+                  efficient task management.
+                </p>
+                <div class="tech-stack">
+                  <span class="badge badge-primary">HTML5</span>
+                  <span class="badge badge-primary">CSS3</span>
+                  <span class="badge badge-primary">JavaScript</span>
+                  <span class="badge badge-primary">Bootstrap</span>
+                </div>
+              </div>
+              <div class="card-footer bg-transparent border-0">
+                <a
+                  href="https://ninja-to-do.netlify.app/"
+                  class="btn btn-primary"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="fas fa-external-link-alt"></i> Live Demo
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project Calculator -->
+          <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card project-card h-100 project-4">
+              <div class="card-img-top-placeholder">
+                <i class="fas fa-calculator"></i>
+                <!-- Icon representing calculator -->
+              </div>
+              <div class="card-body">
+                <h4 class="card-title text-center">Calculator</h4>
                 <p class="card-text">
                   A responsive scientific calculator with advanced functions,
                   history tracking, and light/dark themes, showcasing clean code
@@ -203,12 +508,16 @@
                 <a
                   href="https://github.com/itsfraz/Calculator"
                   class="btn btn-outline-primary mr-2"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <i class="fab fa-github"></i> Code
                 </a>
                 <a
                   href="https://itsfraz.github.io/Calculator/"
                   class="btn btn-primary"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <i class="fas fa-external-link-alt"></i> Live Demo
                 </a>
@@ -217,11 +526,14 @@
           </div>
 
           <!-- Project Snake Game -->
-
           <div class="col-md-6 col-lg-4 mb-4">
-            <div class="card project-card h-100">
-              <div class="card-body floating-card">
-                <h5 class="card-title text-center">Snake-Game</h5>
+            <div class="card project-card h-100 project-5">
+              <div class="card-img-top-placeholder">
+                <i class="fas fa-gamepad"></i>
+                <!-- Icon representing games -->
+              </div>
+              <div class="card-body">
+                <h4 class="card-title text-center">Snake-Game</h4>
                 <p class="card-text">
                   A responsive and visually stunning twist on the classic Snake
                   game with neon aesthetics and power-ups! 🎮 Retro Neon Design
@@ -239,12 +551,16 @@
                 <a
                   href="https://github.com/itsfraz/Snake-Game"
                   class="btn btn-outline-primary mr-2"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <i class="fab fa-github"></i> Code
                 </a>
                 <a
                   href="https://itsfraz.github.io/Snake-Game/"
                   class="btn btn-primary"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <i class="fas fa-external-link-alt"></i> Live Demo
                 </a>
@@ -253,11 +569,14 @@
           </div>
 
           <!-- Project BlackJack-Game-->
-
           <div class="col-md-6 col-lg-4 mb-4">
-            <div class="card project-card h-100">
-              <div class="card-body floating-card">
-                <h5 class="card-title text-center">BlackJack-Game</h5>
+            <div class="card project-card h-100 project-6">
+              <div class="card-img-top-placeholder">
+                <i class="fas fa-dice"></i>
+                <!-- Icon representing dice/cards -->
+              </div>
+              <div class="card-body">
+                <h4 class="card-title text-center">BlackJack-Game</h4>
                 <p class="card-text">
                   Developed a responsive Blackjack game. featuring dynamic card
                   rendering, real-time game 🎲 logic, and interactive UI with
@@ -275,12 +594,16 @@
                 <a
                   href="https://github.com/itsfraz/BlackJack-Game"
                   class="btn btn-outline-primary mr-2"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <i class="fab fa-github"></i> Code
                 </a>
                 <a
                   href="https://itsfraz.github.io/BlackJack-Game/"
                   class="btn btn-primary"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <i class="fas fa-external-link-alt"></i> Live Demo
                 </a>
@@ -289,11 +612,14 @@
           </div>
 
           <!-- Project Clock-App -->
-
           <div class="col-md-6 col-lg-4 mb-4">
-            <div class="card project-card h-100">
-              <div class="card-body floating-card">
-                <h5 class="card-title text-center">Clock-App</h5>
+            <div class="card project-card h-100 project-7">
+              <div class="card-img-top-placeholder">
+                <i class="fas fa-clock"></i>
+                <!-- Icon representing clock -->
+              </div>
+              <div class="card-body">
+                <h4 class="card-title text-center">Clock-App</h4>
                 <p class="card-text">
                   Developed a Modern Analog Clock web application featuring
                   real-time updates, timezone selection, alarm, stopwatch, and
@@ -310,12 +636,16 @@
                 <a
                   href="https://github.com/itsfraz/Ananlog-Clock"
                   class="btn btn-outline-primary mr-2"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <i class="fab fa-github"></i> Code
                 </a>
                 <a
                   href="https://itsfraz.github.io/Ananlog-Clock/"
                   class="btn btn-primary"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <i class="fas fa-external-link-alt"></i> Live Demo
                 </a>
@@ -324,11 +654,14 @@
           </div>
 
           <!-- Project Gate-Entry-Management -->
-
           <div class="col-md-6 col-lg-4 mb-4">
-            <div class="card project-card h-100">
-              <div class="card-body floating-card">
-                <h5 class="card-title text-center">Gate Entry Management</h5>
+            <div class="card project-card h-100 project-8">
+              <div class="card-img-top-placeholder">
+                <i class="fas fa-door-open"></i>
+                <!-- Icon representing entry -->
+              </div>
+              <div class="card-body">
+                <h4 class="card-title text-center">Gate Entry Management</h4>
                 <p class="card-text">
                   Developed a Gate Entry Management System using HTML, CSS, and
                   JavaScript to track visitor entries, manage data, and generate
@@ -344,12 +677,16 @@
                 <a
                   href="https://github.com/itsfraz/People-Entry-Counter"
                   class="btn btn-outline-primary mr-2"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <i class="fab fa-github"></i> Code
                 </a>
                 <a
                   href="https://itsfraz.github.io/People-Entry-Counter/"
                   class="btn btn-primary"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <i class="fas fa-external-link-alt"></i> Live Demo
                 </a>
@@ -358,11 +695,14 @@
           </div>
 
           <!-- Project Social-App -->
-
           <div class="col-md-6 col-lg-4 mb-4">
-            <div class="card project-card h-100">
-              <div class="card-body floating-card">
-                <h5 class="card-title text-center">Social App</h5>
+            <div class="card project-card h-100 project-9">
+              <div class="card-img-top-placeholder">
+                <i class="fas fa-users"></i>
+                <!-- Icon representing social -->
+              </div>
+              <div class="card-body">
+                <h4 class="card-title text-center">Social App</h4>
                 <p class="card-text">
                   Developed a full-stack social media app with user
                   authentication, friend requests, real-time notifications, and
@@ -381,12 +721,16 @@
                 <a
                   href="https://github.com/itsfraz/FriendApp"
                   class="btn btn-outline-primary mr-2"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <i class="fab fa-github"></i> Code
                 </a>
                 <a
                   href="https://social-app-major.netlify.app/login"
                   class="btn btn-primary"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <i class="fas fa-external-link-alt"></i> Live Demo
                 </a>
@@ -395,11 +739,14 @@
           </div>
 
           <!-- Project Age Calculator App -->
-
           <div class="col-md-6 col-lg-4 mb-4">
-            <div class="card project-card h-100">
-              <div class="card-body floating-card">
-                <h5 class="card-title text-center">Age Calculator</h5>
+            <div class="card project-card h-100 project-10">
+              <div class="card-img-top-placeholder">
+                <i class="fas fa-birthday-cake"></i>
+                <!-- Icon representing age/birthday -->
+              </div>
+              <div class="card-body">
+                <h4 class="card-title text-center">Age Calculator</h4>
                 <p class="card-text">
                   A beautiful and interactive age calculator with zodiac signs,
                   animated stats, and modern UI elements. Discover your age in
@@ -415,12 +762,16 @@
                 <a
                   href="https://github.com/itsfraz/CodeAlpha_Age_Calculator"
                   class="btn btn-outline-primary mr-2"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <i class="fab fa-github"></i> Code
                 </a>
                 <a
                   href="https://itsfraz.github.io/CodeAlpha_Age_Calculator/"
                   class="btn btn-primary"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <i class="fas fa-external-link-alt"></i> Live Demo
                 </a>
@@ -429,11 +780,14 @@
           </div>
 
           <!-- Project Tic Tac Toe App -->
-
           <div class="col-md-6 col-lg-4 mb-4">
-            <div class="card project-card h-100">
-              <div class="card-body floating-card">
-                <h5 class="card-title text-center">Tic Tac Toe</h5>
+            <div class="card project-card h-100 project-11">
+              <div class="card-img-top-placeholder">
+                <i class="fas fa-th"></i>
+                <!-- Icon representing grid/tic-tac-toe -->
+              </div>
+              <div class="card-body">
+                <h4 class="card-title text-center">Tic Tac Toe</h4>
                 <p class="card-text">
                   Welcome to Enhanced Tic Tac Toe, a modern and interactive
                   version of the classic game! This project features a sleek
@@ -450,12 +804,16 @@
                 <a
                   href="https://github.com/itsfraz/Tic-Tac-Tao"
                   class="btn btn-outline-primary mr-2"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <i class="fab fa-github"></i> Code
                 </a>
                 <a
                   href="https://itsfraz.github.io/Tic-Tac-Tao/"
                   class="btn btn-primary"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <i class="fas fa-external-link-alt"></i> Live Demo
                 </a>
@@ -464,11 +822,14 @@
           </div>
 
           <!-- Project Snake 2.0 -->
-
           <div class="col-md-6 col-lg-4 mb-4">
-            <div class="card project-card h-100">
-              <div class="card-body floating-card">
-                <h5 class="card-title text-center">Snake 2.0</h5>
+            <div class="card project-card h-100 project-12">
+              <div class="card-img-top-placeholder">
+                <i class="fas fa-snake"></i>
+                <!-- Icon representing snake -->
+              </div>
+              <div class="card-body">
+                <h4 class="card-title text-center">Snake 2.0</h4>
                 <p class="card-text">
                   Welcome to the Snake Game repository! This is a classic Snake
                   game built using HTML, CSS, and JavaScript. The game is
@@ -484,15 +845,11 @@
                 </div>
               </div>
               <div class="card-footer bg-transparent border-0">
-                <!-- <a
-                  href="https://github.com/itsfraz/CodeAlpha_Age_Calculator"
-                  class="btn btn-outline-primary mr-2"
-                >
-                  <i class="fab fa-github"></i> Code
-                </a> -->
                 <a
                   href="https://itsfraz.github.io/SnakeGame2/"
                   class="btn btn-primary"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <i class="fas fa-external-link-alt"></i> Live Demo
                 </a>
@@ -502,9 +859,14 @@
         </div>
       </section>
     </main>
-    <footer class="bg-dark text-white text-center p-3 mt-5">
-      <p>&copy; 2023 Mohd Faraj Ansari. All rights reserved.</p>
+
+    <footer class="text-center mt-5">
+      <div class="container">
+        <p class="mb-0">&copy; 2023 Mohd Faraj Ansari. All rights reserved.</p>
+      </div>
     </footer>
+
+    <!-- Scripts (Keep your existing scripts) -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
