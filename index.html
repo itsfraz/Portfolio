@@ -3,27 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Mohd Faraj Ansari - Full Stack Developer Portfolio showcasing projects and skills">
-    <meta name="keywords" content="full stack developer, web development, portfolio, React, JavaScript">
-    <meta name="author" content="Mohd Faraj Ansari">
+    <meta name="description" content="Mohd Faraj Ansari - Full Stack Developer | Building High-Performance Web Applications">
+    <meta name="theme-color" content="#2563eb">
+    <title>Mohd Faraj Ansari | Full Stack Engineer</title>
+    
+    <!-- Favicon -->
     <link rel="shortcut icon" href="Resource/PortfolioLogo.png" type="image/x-icon">
-    <title>Mohd Faraj Ansari - Portfolio</title>
-    <!-- Social Media Meta Tags -->
-    <meta property="og:title" content="Mohd Faraj Ansari - Portfolio">
-    <meta property="og:description" content="Full Stack Developer Portfolio">
-    <meta property="og:image" content="Resource/preview.png">
+
+    <!-- Fonts: Standardizing on Outfit (Clean, Modern) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     
-    <!-- Preload Critical Resources -->
-    <link rel="preload" href="styles.css" as="style">
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Roboto:wght@400;500;700&display=swap" as="style">
-    
-    <!-- Existing CSS with optimization -->
+    <!-- CSS Dependencies -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> <!-- Scroll Animations -->
     <link rel="stylesheet" href="styles.css">
 
-    <!-- Analytics -->
+    <!-- Analytics (Placeholder) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR-GA-ID"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -33,211 +32,174 @@
     </script>
 </head>
 <body>
+
+    <!-- Navigation -->
     <header>
-      <nav class="navbar navbar-expand-lg navbar-dark glass-navbar sticky-top py-2 px-3">
-        <a class="navbar-brand logo-animate" href="index.html">
-          <i class="fas fa-bolt"></i> Portfolio
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-          <ul class="navbar-nav align-items-center">
-            <li class="nav-item">
-              <a class="nav-link nav-underline" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link nav-underline" href="resume.html">Resume</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link nav-underline" href="projects.html">Projects</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link nav-underline" href="contact.html">Contact</a>
-            </li>
-          </ul>
-          <button class="dark-mode-toggle ml-3" aria-label="Toggle dark mode">
-            <i class="fas fa-moon"></i>
-          </button>
+      <nav class="navbar navbar-expand-lg glass-navbar fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-code text-primary"></i> <span class="text-gradient">FARAJ.DEV</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="fas fa-bars" style="color: var(--text-main)"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="projects.html">Work</a></li>
+                    <li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item ml-3">
+                        <button class="dark-mode-toggle" id="themeToggle" aria-label="Toggle Theme">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
         </div>
       </nav>
     </header>
-    <main class="container mt-5">
+
+    <main>
         <!-- Hero Section -->
         <section class="hero-section">
-            <div id="particles-js" class="particles-container"></div>
             <div class="hero-content">
-                <div class="profile-img-container mb-4">
-                    <img src="Resource/profile.jpg" alt="Mohd Faraj Ansari" class="profile-img" loading="lazy">
+                <div class="profile-img-container mb-4 animate__animated animate__zoomIn">
+                    <img src="Resource/profile.jpg" alt="Mohd Faraj Ansari" class="profile-img">
                 </div>
-                <h1 class="animate__animated animate__fadeInDown">Mohd Faraj Ansari</h1>
-                <div class="typed-container animate__animated animate__fadeIn">
+                
+                <h1 class="animate__animated animate__fadeInUp">
+                    Hi, I'm <span class="text-gradient">Mohd Faraj Ansari</span>
+                </h1>
+                
+                <div class="typed-container animate__animated animate__fadeInUp animate__delay-1s">
                     <span class="typed-text"></span>
                 </div>
-                <p class="lead mt-4 animate__animated animate__fadeInUp">
-                    Passionate about creating elegant solutions through code
+                
+                <p class="lead mt-3 mb-5 text-muted animate__animated animate__fadeInUp animate__delay-1s" style="max-width: 600px; margin: 0 auto;">
+                    Building digital products, brands, and experiences. dedicated to crafting 
+                    <strong>accessible</strong>, <strong>pixel-perfect</strong> web applications.
                 </p>
-                <div class="hero-buttons mt-4">
-                    <a href="projects.html" class="btn btn-glass">
-                        <i class="fas fa-code mr-2"></i>View Projects
+                
+                <div class="hero-buttons animate__animated animate__fadeInUp animate__delay-2s">
+                    <a href="projects.html" class="btn btn-primary mr-3">
+                        <i class="fas fa-rocket mr-2"></i> View My Work
                     </a>
                     <a href="contact.html" class="btn btn-glass">
-                        <i class="fas fa-envelope mr-2"></i>Get In Touch
+                        <i class="fas fa-paper-plane mr-2"></i> Let's Talk
                     </a>
                 </div>
             </div>
+            
+            <!-- Animated Background Elements -->
+            <div class="floating-shape shape-1"></div>
+            <div class="floating-shape shape-2"></div>
         </section>
 
-        <!-- About Section -->
-        <section class="about-section mb-5">
+        <!-- Tech Stack Marquee (Infinite Scroll) -->
+        <section class="tech-marquee-wrapper bg-glass">
+            <div class="container-fluid">
+                <div class="tech-marquee-track">
+                    <!-- Set 1 -->
+                    <i class="fab fa-js tech-icon" title="JavaScript"></i>
+                    <i class="fab fa-react tech-icon" title="React"></i>
+                    <i class="fab fa-node tech-icon" title="Node.js"></i>
+                    <i class="fas fa-database tech-icon" title="SQL"></i>
+                    <i class="fab fa-html5 tech-icon" title="HTML5"></i>
+                    <i class="fab fa-css3-alt tech-icon" title="CSS3"></i>
+                    <i class="fab fa-git-alt tech-icon" title="Git"></i>
+                    <i class="fab fa-java tech-icon" title="Java"></i>
+                    <i class="fab fa-docker tech-icon" title="Docker"></i>
+                    <i class="fab fa-aws tech-icon" title="AWS"></i>
+                    
+                    <!-- Set 2 (Duplicate for seamless loop) -->
+                    <i class="fab fa-js tech-icon" title="JavaScript"></i>
+                    <i class="fab fa-react tech-icon" title="React"></i>
+                    <i class="fab fa-node tech-icon" title="Node.js"></i>
+                    <i class="fas fa-database tech-icon" title="SQL"></i>
+                    <i class="fab fa-html5 tech-icon" title="HTML5"></i>
+                    <i class="fab fa-css3-alt tech-icon" title="CSS3"></i>
+                    <i class="fab fa-git-alt tech-icon" title="Git"></i>
+                    <i class="fab fa-java tech-icon" title="Java"></i>
+                    <i class="fab fa-docker tech-icon" title="Docker"></i>
+                    <i class="fab fa-aws tech-icon" title="AWS"></i>
+                </div>
+            </div>
+        </section>
+
+        <!-- Introduction & Features -->
+        <section class="container py-5" id="about">
+            <div class="section-title-wrapper" data-aos="fade-up">
+                <h2 class="section-title">What I Bring to the Table</h2>
+                <p class="section-subtitle">More than just code. I provide solutions.</p>
+            </div>
+
             <div class="row">
-                <div class="col-md-6 mb-4">
-                    <div class="about-card">
-                        <h2><i class="fas fa-user mr-3"></i>About Me</h2>
-                        <p>I am a Full Stack Developer with expertise in building responsive and user-friendly web applications. With a completed MCA degree, I combine advanced academic knowledge with practical development experience to deliver high-quality solutions.</p>
-                        <p>I enjoy solving complex problems and turning ideas into reality through elegant code.</p>
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="info-card text-center">
+                        <i class="fas fa-layer-group fa-3x text-primary mb-3"></i>
+                        <h4>Full Stack Architecture</h4>
+                        <p class="text-muted">From database design to frontend responsiveness, I handle the entire development lifecycle with precision.</p>
                     </div>
                 </div>
-                <div class="col-md-6 mb-4">
-                    <div class="about-card">
-                        <h2><i class="fas fa-laptop-code mr-3"></i>What I Do</h2>
-                        <div class="skills-list">
-                            <div class="skill-item">
-                                <i class="fas fa-mobile-alt"></i>
-                                <span>Responsive Web Design</span>
-                            </div>
-                            <div class="skill-item">
-                                <i class="fas fa-code"></i>
-                                <span>Full Stack Development</span>
-                            </div>
-                            <div class="skill-item">
-                                <i class="fas fa-database"></i>
-                                <span>Database Management</span>
-                            </div>
-                            <div class="skill-item">
-                                <i class="fas fa-server"></i>
-                                <span>API Development</span>
-                            </div>
-                        </div>
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="info-card text-center">
+                        <i class="fas fa-magic fa-3x text-secondary mb-3"></i>
+                        <h4>UI/UX Centric</h4>
+                        <p class="text-muted">I don't just build features; I craft experiences. Creating intuitive and beautiful interfaces is my passion.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="info-card text-center">
+                        <i class="fas fa-rocket fa-3x text-info mb-3"></i>
+                        <h4>Performance First</h4>
+                        <p class="text-muted">Fast load times and smooth interactions are non-negotiable. I optimize every line of code for speed.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Skills Section -->
-        <section id="skills-section" class="skills-section mb-5">
-            <div class="container">
-                <h2 class="text-center mb-5">My Skills</h2>
-                <div class="row">
-                    <div class="col-md-4 mb-4">
-                        <div class="skill-category">
-                            <h4><i class="fas fa-laptop-code"></i> Programming Languages</h4>
-                            <div class="skill-items">
-                                <div class="skill-item">
-                                    <span class="skill-name"><i class="fab fa-js skill-icon"></i>JavaScript</span>
-                                   
-                                </div>
-                                <div class="skill-item">
-                                    <span class="skill-name"><i class="fab fa-java skill-icon"></i>Java</span>
-                                    
-                                </div>
-                                <div class="skill-item">
-                                    <span class="skill-name"><i class="fas fa-database skill-icon"></i>SQL</span>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-4">
-                        <div class="skill-category">
-                            <h4><i class="fas fa-paint-brush"></i> Web Technologies</h4>
-                            <div class="skill-items">
-                                <div class="skill-item floating-item">
-                                    <span class="skill-name"><i class="fab fa-html5 skill-icon"></i>HTML5 & CSS3</span>
-                                    
-                                </div>
-                                <div class="skill-item">
-                                    <span class="skill-name"><i class="fab fa-react skill-icon"></i>React.js</span>
-                                   
-                                </div>
-                                <div class="skill-item">
-                                    <span class="skill-name"><i class="fab fa-bootstrap skill-icon"></i>Bootstrap</span>
-                                  
-                                </div>
-                                <div class="skill-item">
-                                    <span class="skill-name"><i class="fab fa-css3-alt skill-icon"></i>Tailwind</span>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-4">
-                        <div class="skill-category">
-                            <h4><i class="fas fa-database"></i> Other Skills</h4>
-                            <div class="skill-items">
-                                <div class="skill-item">
-                                    <span class="skill-name"><i class="fab fa-github skill-icon"></i>Git & GitHub</span>
-                                  
-                                </div>
-                                <div class="skill-item">
-                                    <span class="skill-name"><i class="fas fa-database skill-icon"></i>MySQL</span>
-                                   
-                                </div>
-                                <div class="skill-item">
-                                    <span class="skill-name"><i class="fas fa-database skill-icon"></i>MongoDB</span>
-                                  
-                                </div>
-                                <div class="skill-item">
-                                    <span class="skill-name"><i class="fas fa-puzzle-piece skill-icon"></i>Problem Solving</span>
-                                   
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <!-- Featured Projects Snippet -->
+        <section class="container py-5">
+            <div class="section-title-wrapper" data-aos="fade-up">
+                <h2 class="section-title">Recent Work</h2>
             </div>
-        </section>
-
-        <!-- Quick Links Section -->
-        <section class="quick-links-section mb-5">
+            
             <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="quick-link-card">
-                        <i class="fas fa-project-diagram"></i>
-                        <h3>Latest Projects</h3>
-                        <p>Check out my recent work and personal projects</p>
-                        <a href="projects.html" class="btn btn-outline-primary">View Projects</a>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="quick-link-card">
-                        <i class="fas fa-file-alt"></i>
-                        <h3>Resume</h3>
-                        <p>View my qualifications and experience</p>
-                        <a href="resume.html" class="btn btn-outline-primary">View Resume</a>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="quick-link-card">
-                        <i class="fas fa-envelope"></i>
-                        <h3>Contact</h3>
-                        <p>Get in touch for collaborations</p>
-                        <a href="contact.html" class="btn btn-outline-primary">Contact Me</a>
-                    </div>
+                <!-- Dynamic Content Loading Placeholder -->
+                <div class="col-12 text-center">
+                    <p class="lead mb-4">Explore my detailed case studies and live demos.</p>
+                    <a href="projects.html" class="btn btn-primary">Check Out Portfolio</a>
                 </div>
             </div>
         </section>
     </main>
-    <footer class="bg-dark text-white text-center p-3">
-        <p>&copy; 2023 Mohd Faraj Ansari. All rights reserved.</p>
+
+    <footer class="glass-footer">
+        <div class="container">
+            <div class="social-links mb-4">
+                <a href="#" class="mx-2 text-muted h4"><i class="fab fa-github"></i></a>
+                <a href="#" class="mx-2 text-muted h4"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="mx-2 text-muted h4"><i class="fab fa-twitter"></i></a>
+            </div>
+            <p>&copy; 2025 Mohd Faraj Ansari. Crafted with <i class="fas fa-heart text-danger"></i> and Coffee.</p>
+        </div>
     </footer>
-    <div class="floating-deco deco1"></div>
-    <div class="floating-deco deco2"></div>
-    <div class="floating-deco deco3"></div>
+
+    <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script> <!-- Better Typed.js -->
     <script src="scripts.js"></script>
+    <script>
+        // Init AOS
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+    </script>
 </body>
 </html>
