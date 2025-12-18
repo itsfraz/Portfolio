@@ -116,7 +116,7 @@ a {
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--border-glass);
-    height: var(--navbar-height);
+    min-height: var(--navbar-height);
     transition: all 0.4s ease;
     padding: 0 1rem;
 }
@@ -629,9 +629,112 @@ body.dark-mode .skill-bar { background: rgba(255,255,255,0.1); }
 /* =========================================
    9. RESPONSIVE
    ========================================= */
-@media (max-width: 768px) {
+@media (max-width: 991px) {
     .section-title { font-size: 2rem; }
     .hero-section { padding-top: 60px; } /* Less padding on mobile */
     .btn { padding: 0.6rem 1.2rem; }
     .projects-grid { grid-template-columns: 1fr; }
+
+    /* Navbar Fixes */
+    .glass-navbar {
+        height: auto !important; /* Allow expansion */
+        background: var(--bg-glass) !important; /* Force background on mobile */
+    }
+
+    .navbar-collapse {
+        margin-top: 1rem;
+        background: var(--bg-body); /* Solid background to prevent overlap */
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        padding: 1.5rem;
+        border-radius: var(--border-radius-md);
+        border: 1px solid var(--border-glass);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    .navbar-nav {
+        align-items: center;
+    }
+
+    .nav-item {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 0.5rem;
+    }
+
+    .nav-link {
+        padding: 0.8rem !important;
+        border-radius: var(--border-radius-sm);
+        display: block;
+    }
+
+    .nav-link:hover, .nav-link.active {
+        background: var(--primary-color) !important;
+        color: white !important;
+    }
 }
+
+/* =========================================
+   10. SKILLS & EXPERTISE SECTION
+   ========================================= */
+.icon-box {
+    width: 60px;
+    height: 60px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1.5rem;
+    font-size: 1.5rem;
+    background: rgba(37, 99, 235, 0.1);
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(37, 99, 235, 0.2);
+}
+
+.skill-category-card:hover .icon-box {
+    background: var(--primary-color);
+    color: white;
+    transform: rotate(5deg) scale(1.1);
+    box-shadow: 0 5px 15px rgba(37, 99, 235, 0.4);
+}
+
+.skill-item {
+    margin-bottom: 1.5rem;
+}
+
+.skill-item:last-child {
+    margin-bottom: 0;
+}
+
+.skill-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+@keyframes fillBar {
+    from { width: 0; }
+}
+
+.skill-fill-animated {
+    height: 100%;
+    background: var(--gradient-primary);
+    border-radius: 10px;
+    width: 0;
+    animation: fillBar 1.5s ease-out forwards;
+    animation-play-state: paused; /* Controlled via JS or just run */
+}
+
+/* Fix for animation run - we'll rely on the existing .skill-fill transition if possible, 
+   but adding a class for specialized width setting is better */
+.w-95 { width: 95%; }
+.w-90 { width: 90%; }
+.w-85 { width: 85%; }
+.w-80 { width: 80%; }
+.w-75 { width: 75%; }
+.w-65 { width: 65%; }
+.w-60 { width: 60%; }
+.w-50 { width: 50%; }
