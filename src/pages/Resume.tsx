@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Briefcase, GraduationCap, Download, Cpu, Star, ExternalLink, Calendar, MapPin, User, Mail, Phone, Globe } from 'lucide-react';
+import { Briefcase, GraduationCap, Download, Cpu, Star, Calendar, MapPin, User, Mail, Phone, Globe } from 'lucide-react';
 import { FaLinkedin as Linkedin, FaGithub as Github } from 'react-icons/fa';
 import { PDFDownloadLink } from '@react-pdf/renderer';
 import AnimatedSection from '../components/AnimatedSection';

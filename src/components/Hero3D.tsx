@@ -9,7 +9,7 @@ function Icosahedron() {
   const { theme } = useTheme();
 
   // Subtle rotation
-  useFrame((state, delta) => {
+  useFrame((_state, delta) => {
     if (meshRef.current) {
       meshRef.current.rotation.y += delta * 0.2;
       meshRef.current.rotation.x += delta * 0.1;
@@ -60,8 +60,8 @@ export default function Hero3D() {
         
         <PresentationControls 
           global 
-          config={{ mass: 2, tension: 500 }} 
-          snap={{ mass: 4, tension: 1500 }} 
+          damping={0.2}
+          snap={true}
           rotation={[0, 0.3, 0]} 
           polar={[-Math.PI / 3, Math.PI / 3]} 
           azimuth={[-Math.PI / 1.4, Math.PI / 2]}
