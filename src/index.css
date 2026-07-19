@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-image: radial-gradient(
+        circle at 10% 20%,
+        rgba(37, 99, 235, 0.05) 0%,
+        transparent 20%
+      ),
+      radial-gradient(
+        circle at 90% 80%,
+        rgba(236, 72, 153, 0.05) 0%,
+        transparent 20%
+      );
+    background-attachment: fixed;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(to right, #a78bfa, #22d3ee);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .glass {
+    @apply bg-bg-glass dark:bg-bg-darkGlass backdrop-blur-md border border-border-glass dark:border-border-darkGlass shadow-glass dark:shadow-dark-glass;
+  }
+  
+  .glass-panel {
+    @apply bg-bg-panel dark:bg-bg-darkPanel backdrop-blur-lg border border-border-glass dark:border-border-darkGlass rounded-2xl p-8;
+  }
+
+  .btn {
+    @apply px-7 py-3 rounded-full font-semibold uppercase tracking-wide text-sm transition-all duration-300 ease-[cubic-bezier(0.175,0.885,0.32,1.275)] relative overflow-hidden z-10;
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, hsl(250,70%,60%), hsl(190,80%,60%));
+    @apply text-white shadow-[0_4px_15px_rgba(37,99,235,0.4)] hover:-translate-y-1 hover:shadow-[0_8px_25px_rgba(37,99,235,0.6)];
+  }
+
+  .btn-glass {
+    @apply bg-white/10 backdrop-blur-sm border border-border-glass text-text-main dark:text-text-darkMain hover:bg-white/20 hover:border-primary hover:text-primary hover:-translate-y-1;
+  }
+}
+
+/* Custom print styles to support the interactive resume template export */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  
+  main {
+    padding-top: 0 !important;
+  }
+
+  .print\:hidden {
+    display: none !important;
+  }
+
+  .print\:block-important {
+    display: block !important;
+  }
+
+  /* Force background colors/gradients to print */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Simple styling adjustments for printed timeline */
+  .glass-panel {
+    background: transparent !important;
+    border: 1px solid #e2e8f0 !important;
+    box-shadow: none !important;
+    page-break-inside: avoid;
+    border-radius: 8px !important;
+    padding: 1rem !important;
+  }
+
+  .page-break-before {
+    page-break-before: always;
+  }
+}
+

@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mohd Faraj Ansari - Full Stack Developer | Building High-Performance Web Applications">
+    <meta name="theme-color" content="#2563eb">
+    <title>Mohd Faraj Ansari | Full Stack Engineer</title>
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="Resource/PortfolioLogo.png" type="image/x-icon">
+
+    <!-- Fonts: Standardizing on Outfit (Clean, Modern) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS Dependencies -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> <!-- Scroll Animations -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Analytics (Placeholder) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR-GA-ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'YOUR-GA-ID');
+    </script>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <header>
+      <nav class="navbar navbar-expand-lg glass-navbar fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-code text-primary"></i> <span class="text-gradient">FARAJ.DEV</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="fas fa-bars" style="color: var(--text-main)"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="projects.html">Work</a></li>
+                    <li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item ml-3">
+                        <button class="dark-mode-toggle" id="themeToggle" aria-label="Toggle Theme">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <div class="profile-img-container mb-4 animate__animated animate__zoomIn">
+                    <img src="Resource/profile.jpg" alt="Mohd Faraj Ansari" class="profile-img">
+                </div>
+                
+                <h1 class="animate__animated animate__fadeInUp">
+                    Hi, I'm <span class="text-gradient">Mohd Faraj Ansari</span>
+                </h1>
+                
+                <div class="typed-container animate__animated animate__fadeInUp animate__delay-1s">
+                    <span class="typed-text"></span>
+                </div>
+                
+                <p class="lead mt-3 mb-5 text-muted animate__animated animate__fadeInUp animate__delay-1s" style="max-width: 600px; margin: 0 auto;">
+                    Building digital products, brands, and experiences. dedicated to crafting 
+                    <strong>accessible</strong>, <strong>pixel-perfect</strong> web applications.
+                </p>
+                
+                <div class="hero-buttons animate__animated animate__fadeInUp animate__delay-2s">
+                    <a href="projects.html" class="btn btn-primary mr-3">
+                        <i class="fas fa-rocket mr-2"></i> View My Work
+                    </a>
+                    <a href="contact.html" class="btn btn-glass">
+                        <i class="fas fa-paper-plane mr-2"></i> Let's Talk
+                    </a>
+                </div>
+            </div>
+            
+
+        </section>
+
+        <!-- Tech Stack Marquee (Infinite Scroll) -->
+        <section class="tech-marquee-wrapper">
+            <div class="container-fluid">
+                <div class="tech-marquee-track">
+                    <!-- Set 1 -->
+                    <i class="fab fa-js tech-icon" title="JavaScript"></i>
+                    <i class="fab fa-react tech-icon" title="React"></i>
+                    <i class="fab fa-node tech-icon" title="Node.js"></i>
+                    <i class="fas fa-database tech-icon" title="SQL"></i>
+                    <i class="fab fa-html5 tech-icon" title="HTML5"></i>
+                    <i class="fab fa-css3-alt tech-icon" title="CSS3"></i>
+                    <i class="fab fa-git-alt tech-icon" title="Git"></i>
+                    <i class="fab fa-java tech-icon" title="Java"></i>
+                    <i class="fab fa-docker tech-icon" title="Docker"></i>
+                    <i class="fab fa-aws tech-icon" title="AWS"></i>
+                    
+                    <!-- Set 2 (Duplicate for seamless loop) -->
+                    <i class="fab fa-js tech-icon" title="JavaScript"></i>
+                    <i class="fab fa-react tech-icon" title="React"></i>
+                    <i class="fab fa-node tech-icon" title="Node.js"></i>
+                    <i class="fas fa-database tech-icon" title="SQL"></i>
+                    <i class="fab fa-html5 tech-icon" title="HTML5"></i>
+                    <i class="fab fa-css3-alt tech-icon" title="CSS3"></i>
+                    <i class="fab fa-git-alt tech-icon" title="Git"></i>
+                    <i class="fab fa-java tech-icon" title="Java"></i>
+                    <i class="fab fa-docker tech-icon" title="Docker"></i>
+                    <i class="fab fa-aws tech-icon" title="AWS"></i>
+                </div>
+            </div>
+        </section>
+
+        <!-- Introduction & Features -->
+        <section class="container py-5" id="about">
+            <div class="section-title-wrapper" data-aos="fade-up">
+                <h2 class="section-title">What I Bring to the Table</h2>
+                <p class="section-subtitle">More than just code. I provide solutions.</p>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="info-card text-center">
+                        <i class="fas fa-layer-group fa-3x text-primary mb-3"></i>
+                        <h4>Full Stack Architecture</h4>
+                        <p class="text-muted">From database design to frontend responsiveness, I handle the entire development lifecycle with precision.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="info-card text-center">
+                        <i class="fas fa-magic fa-3x text-secondary mb-3"></i>
+                        <h4>UI/UX Centric</h4>
+                        <p class="text-muted">I don't just build features; I craft experiences. Creating intuitive and beautiful interfaces is my passion.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="info-card text-center">
+                        <i class="fas fa-rocket fa-3x text-info mb-3"></i>
+                        <h4>Performance First</h4>
+                        <p class="text-muted">Fast load times and smooth interactions are non-negotiable. I optimize every line of code for speed.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills & Arsenal Section -->
+        <section class="container py-5" id="skills">
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-5 mb-5 mb-lg-0" data-aos="fade-right">
+                    <h2 class="section-title mb-4">Programming<br> & Toolset</h2>
+                    <p class="lead text-muted mb-4">
+                        I specialize in building scalable, real-time applications using the <span class="text-gradient">MERN Stack</span>. My code is clean, modular, and optimized for performance.
+                    </p>
+                    <a href="resume.html" class="btn btn-glass">
+                        Download CV <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                
+                <div class="col-lg-7">
+                    <div class="row">
+                        <!-- Frontend Card -->
+                        <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                            <div class="glass-panel h-100 skill-category-card">
+                                <div class="d-flex align-items-center mb-4">
+                                    <div class="icon-box">
+                                        <i class="fab fa-react"></i>
+                                    </div>
+                                    <h4 class="mb-0">Frontend</h4>
+                                </div>
+                                <div class="skill-list">
+                                    <div class="skill-item">
+                                        <div class="skill-meta">
+                                            <span>React / Redux</span>
+                                            <span class="text-primary">65%</span>
+                                        </div>
+                                        <div class="skill-bar">
+                                            <div class="skill-fill w-65"></div>
+                                        </div>
+                                    </div>
+                                    <div class="skill-item">
+                                        <div class="skill-meta">
+                                            <span>HTML5 / CSS3</span>
+                                            <span class="text-primary">90%</span>
+                                        </div>
+                                        <div class="skill-bar">
+                                            <div class="skill-fill w-90"></div>
+                                        </div>
+                                    </div>
+                                    <div class="skill-item">
+                                        <div class="skill-meta">
+                                            <span>Tailwind / Bootstrap</span>
+                                            <span class="text-primary">85%</span>
+                                        </div>
+                                        <div class="skill-bar">
+                                            <div class="skill-fill w-85"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Backend Card -->
+                        <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                            <div class="glass-panel h-100 skill-category-card">
+                                <div class="d-flex align-items-center mb-4">
+                                    <div class="icon-box">
+                                        <i class="fab fa-node-js"></i>
+                                    </div>
+                                    <h4 class="mb-0">Backend</h4>
+                                </div>
+                                <div class="skill-list">
+                                    <div class="skill-item">
+                                        <div class="skill-meta">
+                                            <span>Node.js / Express</span>
+                                            <span class="text-primary">50%</span>
+                                        </div>
+                                        <div class="skill-bar">
+                                            <div class="skill-fill w-50"></div>
+                                        </div>
+                                    </div>
+                                    <div class="skill-item">
+                                        <div class="skill-meta">
+                                            <span>MongoDB / SQL</span>
+                                            <span class="text-primary">60%</span>
+                                        </div>
+                                        <div class="skill-bar">
+                                            <div class="skill-fill w-60"></div>
+                                        </div>
+                                    </div>
+                                    <div class="skill-item">
+                                        <div class="skill-meta">
+                                            <span>REST APIs</span>
+                                            <span class="text-primary">95%</span>
+                                        </div>
+                                        <div class="skill-bar">
+                                            <div class="skill-fill w-95"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Tools Row -->
+            <div class="row" data-aos="fade-up" data-aos-delay="300">
+                <div class="col-12">
+                    <div class="glass p-4 rounded text-center">
+                        <span class="text-muted font-weight-bold mr-3 text-uppercase" style="letter-spacing: 1px;">Also Proficient In:</span>
+                        <div class="d-inline-flex flex-wrap justify-content-center align-items-center" style="gap: 1rem;">
+                            <span class="badge badge-pill badge-light p-2 px-3">Git & GitHub</span>
+                            <span class="badge badge-pill badge-light p-2 px-3">AWS (Basic)</span>
+                            <span class="badge badge-pill badge-light p-2 px-3">Docker</span>
+                            <span class="badge badge-pill badge-light p-2 px-3">Figma</span>
+                            <span class="badge badge-pill badge-light p-2 px-3">VS Code</span>
+                            <span class="badge badge-pill badge-light p-2 px-3">Postman</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <!-- Featured Projects Snippet -->
+        <section class="container py-5">
+            <div class="section-title-wrapper" data-aos="fade-up">
+                <h2 class="section-title">Recent Work</h2>
+            </div>
+            
+            <div class="row">
+                <!-- Dynamic Content Loading Placeholder -->
+                <div class="col-12 text-center">
+                    <p class="lead mb-4">Explore my detailed case studies and live demos.</p>
+                    <a href="projects.html" class="btn btn-primary">Check Out Portfolio</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="glass-footer">
+        <div class="container">
+            <div class="social-links mb-4">
+                <a href="https://github.com/itsfraz" target="_blank" class="mx-2 text-muted h4"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/faraj-ansari/" target="_blank" class="mx-2 text-muted h4"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <p>&copy; 2025 Mohd Faraj Ansari. Crafted with <i class="fas fa-heart text-danger"></i> and Coffee.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script> <!-- Better Typed.js -->
+    <script src="scripts.js"></script>
+    <script>
+        // Init AOS
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+    </script>
+</body>
+</html>

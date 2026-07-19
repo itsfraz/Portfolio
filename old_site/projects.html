@@ -108,7 +108,7 @@
                 </article>
 
                 <!-- Project: Habit Tracker -->
-                <article class="project-card project-item" data-tags="React Redux">
+                <article class="project-card project-item" data-tags="FullStack React NodeJs MongoDB">
                     <div class="card-img-wrapper">
                          <div style="width:100%; height:100%; background: linear-gradient(135deg, #667eea, #764ba2); display: flex; align-items: center; justify-content: center;">
                             <i class="fas fa-check-circle fa-3x text-white"></i>
@@ -118,16 +118,15 @@
                         <h3 class="project-title">Habit Tracker</h3>
                         <div class="stack-tags">
                             <span class="stack-tag">React</span>
-                            <span class="stack-tag">Redux</span>
-                            <span class="stack-tag">Material UI</span>
-                            <span class="stack-tag">Node.js</span>
-                            <span class="stack-tag">Socket.IO</span>
+                            <span class="stack-tag">Express.js</span>
                             <span class="stack-tag">MongoDB</span>
+                            <span class="stack-tag">Bootstrap</span>
                         </div>
-                        <p class="project-desc">Productivity tool to track daily habits with visual progress indicators and streak tracking.</p>
-                        <div class="card-actions">
-                            <a href="https://github.com/itsfraz/" target="_blank" class="card-btn code"><i class="fab fa-github"></i> Code</a>
-                            <!-- <a href="https://habit-tracker-app-frontend-habit-tracker.onrender.com" target="_blank" class="card-btn demo"><i class="fas fa-external-link-alt"></i> Live</a> -->
+                        <p class="project-desc">A full-stack web application for building and tracking daily habits, with visual analytics and a gamified motivation system.</p>
+                        <div class="card-actions" style="flex-wrap: wrap; gap: 10px;">
+                            <a href="javascript:void(0)" data-toggle="modal" data-target="#habitTrackerModal" class="card-btn demo"><i class="fas fa-info-circle"></i> Details</a>
+                            <a href="https://github.com/itsfraz/Habit-tracker-app.git" target="_blank" class="card-btn code"><i class="fab fa-github"></i> Code</a>
+                            <a href="https://habit-tracker-app-seven-xi.vercel.app/" target="_blank" class="card-btn demo"><i class="fas fa-external-link-alt"></i> Live</a>
                         </div>
                     </div>
                 </article>
@@ -261,47 +260,7 @@
                     </div>
                 </article>
 
-                <!-- Project: Quiz App -->
-                <article class="project-card project-item" data-tags="JavaScript">
-                    <div class="card-img-wrapper">
-                        <div style="width:100%; height:100%; background: linear-gradient(to top, #30cfd0, #330867); display: flex; align-items: center; justify-content: center;">
-                           <i class="fas fa-question fa-3x text-white"></i>
-                       </div>
-                   </div>
-                    <div class="card-content">
-                        <h3 class="project-title">Quiz App</h3>
-                        <div class="stack-tags">
-                            <span class="stack-tag">HTML</span>
-                            <span class="stack-tag">CSS</span>
-                            <span class="stack-tag">JavaScript</span>
-                        </div>
-                        <p class="project-desc">Dynamic quiz application fetching questions from an Open Trivia API.</p>
-                        <div class="card-actions">
-                            <a href="https://quizqna.netlify.app/" target="_blank" class="card-btn demo"><i class="fas fa-external-link-alt"></i> Live</a>
-                        </div>
-                    </div>
-                </article>
 
-                 <!-- Project: Calculator -->
-                 <article class="project-card project-item" data-tags="JavaScript Utility">
-                    <div class="card-img-wrapper">
-                        <div style="width:100%; height:100%; background: #0f172a; display: flex; align-items: center; justify-content: center;">
-                           <i class="fas fa-calculator fa-3x text-white"></i>
-                       </div>
-                   </div>
-                    <div class="card-content">
-                        <h3 class="project-title">Scientific Calculator</h3>
-                        <div class="stack-tags">
-                            <span class="stack-tag">JavaScript</span>
-                            <span class="stack-tag">CSS Grid</span>
-                        </div>
-                        <p class="project-desc">Fully functional scientific calculator with history and dark mode.</p>
-                        <div class="card-actions">
-                            <a href="https://github.com/itsfraz/Calculator" target="_blank" class="card-btn code"><i class="fab fa-github"></i> Code</a>
-                            <a href="https://itsfraz.github.io/Calculator/" target="_blank" class="card-btn demo"><i class="fas fa-external-link-alt"></i> Live</a>
-                        </div>
-                    </div>
-                </article>
 
 
             </div>
@@ -356,6 +315,41 @@
                     <div class="modal-footer" style="border-top: 1px solid rgba(255,255,255,0.1);">
                         <a href="#" target="_blank" class="btn btn-primary"><i class="fab fa-github"></i> GitHub</a>
                         <a href="#" target="_blank" class="btn btn-outline-light"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Habit Tracker Modal -->
+        <div class="modal fade" id="habitTrackerModal" tabindex="-1" role="dialog" aria-labelledby="habitTrackerModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                <div class="modal-content" style="background: var(--bg-card, #1e1e2f); color: var(--text-main, #ffffff); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; backdrop-filter: blur(10px);">
+                    <div class="modal-header" style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                        <h5 class="modal-title" id="habitTrackerModalLabel">Habit Tracker | Full-Stack Motivation & Analytics</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="color: var(--text-main, #ffffff); text-shadow: none;">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <h6 style="color: var(--primary-color, #2563eb); margin-bottom: 10px; text-align: left;">What it does:</h6>
+                        <p style="font-size: 0.95rem; color: var(--text-muted, #a0a0a0); margin-bottom: 15px; text-align: left;">
+                            Users can register and log in securely, then create habits with custom frequencies (daily, weekly, custom). Each habit tracks completion history, which feeds into a dashboard showing success rates, a GitHub-style streak heatmap, and completion charts. Users earn XP and badges as they stay consistent, and can share progress summaries.
+                        </p>
+                        <h6 style="color: var(--primary-color, #2563eb); margin-bottom: 10px; text-align: left;">How it's built:</h6>
+                        <p style="font-size: 0.95rem; color: var(--text-muted, #a0a0a0); margin-bottom: 15px; text-align: left;">
+                            The frontend is a React single-page app using Chart.js for data visualization and react-calendar-heatmap for streak tracking, styled with Bootstrap. The backend is a Node/Express REST API with MongoDB (via Mongoose) for data persistence and JWT for stateless authentication. Frontend and backend are deployed and hosted separately — React on Vercel, Express on Render — communicating over a REST API.
+                        </p>
+                        <h6 style="color: var(--primary-color, #2563eb); margin-bottom: 10px; text-align: left;">Challenges solved:</h6>
+                        <ul style="padding-left: 20px; margin-bottom: 0; font-size: 0.95rem; color: var(--text-muted, #a0a0a0); text-align: left;">
+                            <li class="mb-2">Diagnosed and fixed a CORS misconfiguration between the separately-hosted frontend and backend, including a subtle bug where a trailing slash in the allowed-origins list caused exact-match comparison to silently fail.</li>
+                            <li class="mb-2">Caught and remediated an accidentally committed .env file containing live database credentials — rotated the exposed secrets and rebuilt the repo's environment-variable handling with a safe .env.example template.</li>
+                            <li>Resolved a CI build failure on Vercel caused by Create React App treating ESLint warnings as build-breaking errors in production, fixing the underlying React hook dependency issues rather than suppressing them.</li>
+                        </ul>
+                    </div>
+                    <div class="modal-footer" style="border-top: 1px solid rgba(255,255,255,0.1);">
+                        <a href="https://github.com/itsfraz/Habit-tracker-app.git" target="_blank" class="btn btn-primary"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://habit-tracker-app-seven-xi.vercel.app/" target="_blank" class="btn btn-outline-light"><i class="fas fa-external-link-alt"></i> Live Demo</a>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     </div>
                 </div>
