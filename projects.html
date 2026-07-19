@@ -118,9 +118,34 @@
                             <span class="stack-tag">Socket.IO</span>
                         </div>
                         <p class="project-desc">A real-time social platform featuring live chat, notifications, friend requests, and secure authentication.</p>
-                        <div class="card-actions">
+                        <div class="card-actions" style="flex-wrap: wrap; gap: 10px;">
+                            <a href="javascript:void(0)" data-toggle="modal" data-target="#echoChatModal" class="card-btn demo"><i class="fas fa-info-circle"></i> Details</a>
                             <a href="https://github.com/itsfraz/FriendApp" target="_blank" class="card-btn code"><i class="fab fa-github"></i> Code</a>
-                            <!-- <a href="https://social-app-major.netlify.app/login" target="_blank" class="card-btn demo"><i class="fas fa-external-link-alt"></i> Live</a> -->
+                            <a href="https://echo-chat-app-six.vercel.app/login" target="_blank" class="card-btn demo"><i class="fas fa-external-link-alt"></i> Live</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project: Pearl Hotel -->
+                <article class="project-card project-item" data-tags="FullStack React NodeJs MongoDB">
+                    <div class="card-img-wrapper">
+                        <div style="width:100%; height:100%; background: linear-gradient(135deg, #2b5876, #4e4376); display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-hotel fa-3x text-white"></i>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="project-title">Pearl Hotel</h3>
+                        <div class="stack-tags">
+                            <span class="stack-tag">React</span>
+                            <span class="stack-tag">Node.js</span>
+                            <span class="stack-tag">MongoDB</span>
+                            <span class="stack-tag">Express</span>
+                        </div>
+                        <p class="project-desc">Full-Stack Hotel Booking Platform with secure authentication, Razorpay integration, and an admin dashboard.</p>
+                        <div class="card-actions" style="flex-wrap: wrap; gap: 10px;">
+                            <a href="javascript:void(0)" data-toggle="modal" data-target="#pearlHotelModal" class="card-btn demo"><i class="fas fa-info-circle"></i> Details</a>
+                            <a href="https://github.com/itsfraz/Pearl-Hotel.git" target="_blank" class="card-btn code"><i class="fab fa-github"></i> Code</a>
+                            <a href="https://pearl-hotel-eight.vercel.app/" target="_blank" class="card-btn demo"><i class="fas fa-external-link-alt"></i> Live</a>
                         </div>
                     </div>
                 </article>
@@ -166,7 +191,7 @@
                         <p class="project-desc">A premium BlackJack game featuring 3D animations, sound effects, and a realistic casino atmosphere.</p>
                         <div class="card-actions">
                             <a href="#" class="card-btn code"><i class="fab fa-github"></i> Code</a>
-                            <a href="https://blackjack-edition.netlify.app/" target="_blank" class="card-btn demo"><i class="fas fa-external-link-alt"></i> Live</a>
+                            <a href="https://blackjackgamepro.onrender.com" target="_blank" class="card-btn demo"><i class="fas fa-external-link-alt"></i> Live</a>
                         </div>
                     </div>
                 </article>
@@ -256,6 +281,61 @@
 
             </div>
         </section>
+        <!-- Echo Chat App Modal -->
+        <div class="modal fade" id="echoChatModal" tabindex="-1" role="dialog" aria-labelledby="echoChatModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                <div class="modal-content" style="background: var(--bg-card, #1e1e2f); color: var(--text-main, #ffffff); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; backdrop-filter: blur(10px);">
+                    <div class="modal-header" style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                        <h5 class="modal-title" id="echoChatModalLabel">Echo Chat App | MERN Stack, Real-Time Messaging</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="color: var(--text-main, #ffffff); text-shadow: none;">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <ul style="padding-left: 20px; margin-bottom: 0; font-size: 0.95rem; color: var(--text-muted, #a0a0a0); text-align: left;">
+                            <li class="mb-2">Built a full-stack real-time chat application using React, Node.js, Express, MongoDB, and Socket.IO, supporting live messaging, typing indicators, friend requests, and image sharing</li>
+                            <li class="mb-2">Implemented secure authentication with JWT access/refresh token rotation, HTTP-only cookies, and bcrypt password hashing</li>
+                            <li class="mb-2">Designed a RESTful API with Express and Mongoose for user management, friend request workflows, and conversation/message persistence in MongoDB</li>
+                            <li class="mb-2">Deployed a decoupled architecture with the React frontend on Vercel and Node.js/Express backend on Render, configuring environment-based CORS policies for secure cross-origin communication</li>
+                            <li class="mb-2">Debugged and resolved production deployment issues including cross-origin resource sharing (CORS) misconfigurations, dependency conflicts, and CI build failures across a split-origin (Vercel/Render) hosting setup</li>
+                            <li>Identified and remediated an exposed database credential in version control, rotating secrets and implementing proper environment variable management for secure configuration</li>
+                        </ul>
+                    </div>
+                    <div class="modal-footer" style="border-top: 1px solid rgba(255,255,255,0.1);">
+                        <a href="https://github.com/itsfraz/FriendApp" target="_blank" class="btn btn-primary"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://echo-chat-app-six.vercel.app/login" target="_blank" class="btn btn-outline-light"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Pearl Hotel Modal -->
+        <div class="modal fade" id="pearlHotelModal" tabindex="-1" role="dialog" aria-labelledby="pearlHotelModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                <div class="modal-content" style="background: var(--bg-card, #1e1e2f); color: var(--text-main, #ffffff); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; backdrop-filter: blur(10px);">
+                    <div class="modal-header" style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                        <h5 class="modal-title" id="pearlHotelModalLabel">Pearl Hotel | Full-Stack Hotel Booking Platform</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="color: var(--text-main, #ffffff); text-shadow: none;">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <ul style="padding-left: 20px; margin-bottom: 0; font-size: 0.95rem; color: var(--text-muted, #a0a0a0); text-align: left;">
+                            <li class="mb-2">Architected and developed a full-stack hotel booking platform using MongoDB, Express.js, React, and Node.js, designing 14 MongoDB data models and 10+ RESTful API endpoints covering bookings, rooms, events, spa services, and dining</li>
+                            <li class="mb-2">Implemented secure JWT-based authentication with bcrypt password hashing and role-based access control (RBAC), powering a protected admin dashboard with 8 management modules for rooms, bookings, users, coupons, and events</li>
+                            <li class="mb-2">Integrated the Razorpay payment gateway for online transactions and PDFKit for automated invoice generation, plus a coupon/discount engine for promotional pricing</li>
+                            <li class="mb-2">Built a responsive, animated UI with React, Tailwind CSS, and Framer Motion, including an interactive Leaflet map, image carousels, and a customer review/ratings system</li>
+                            <li>Deployed a live production environment via CI/CD from GitHub to Render (backend) and Vercel (frontend), managing environment-based secrets and resolving CORS and build-configuration issues</li>
+                        </ul>
+                    </div>
+                    <div class="modal-footer" style="border-top: 1px solid rgba(255,255,255,0.1);">
+                        <a href="#" target="_blank" class="btn btn-primary"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="#" target="_blank" class="btn btn-outline-light"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 
     <footer class="glass-footer">
