@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { TypeAnimation } from 'react-type-animation';
 import { Layers, Zap, Layout } from 'lucide-react';
 import { FaReact, FaNodeJs } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 import AnimatedSection from '../components/AnimatedSection';
 import TechMarquee from '../components/TechMarquee';
 import GlassCard from '../components/ui/GlassCard';
@@ -72,12 +73,12 @@ export default function Home() {
             transition={{ delay: 0.8 }}
             className="flex flex-wrap justify-center gap-4"
           >
-            <a href="/projects" className="btn btn-primary flex items-center gap-2">
+            <Link to="/projects" className="btn btn-primary flex items-center gap-2">
               <i className="fas fa-rocket"></i> View My Work
-            </a>
-            <a href="/contact" className="btn btn-glass flex items-center gap-2">
+            </Link>
+            <Link to="/contact" className="btn btn-glass flex items-center gap-2">
               <i className="fas fa-paper-plane"></i> Let's Talk
-            </a>
+            </Link>
           </motion.div>
         </div>
       </section>
@@ -124,9 +125,9 @@ export default function Home() {
             <p className="text-lg text-text-muted dark:text-text-darkMuted mb-8">
               I specialize in building scalable, real-time applications using the <span className="text-gradient">MERN Stack</span>. My code is clean, modular, and optimized for performance.
             </p>
-            <a href="/resume" className="btn btn-glass inline-flex items-center gap-2">
+            <Link to="/resume" className="btn btn-glass inline-flex items-center gap-2">
               Download CV <i className="fas fa-arrow-right"></i>
-            </a>
+            </Link>
           </AnimatedSection>
           
           <div className="lg:col-span-7 grid md:grid-cols-2 gap-6">
@@ -183,7 +184,7 @@ export default function Home() {
           Recent Work
         </h2>
         <p className="text-lg text-text-muted dark:text-text-darkMuted mt-8 mb-8 max-w-xl mx-auto">Explore my detailed case studies and live demos.</p>
-        <a href="/projects" className="btn btn-primary">Check Out Portfolio</a>
+        <Link to="/projects" className="btn btn-primary">Check Out Portfolio</Link>
       </AnimatedSection>
     </div>
   );
