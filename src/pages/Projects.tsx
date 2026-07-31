@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Users, Hotel, CheckCircle, BookOpen, Box, Dice5, Shield, Gamepad2 } from 'lucide-react';
+import { Users, Hotel, CheckCircle, BookOpen, Box, Dice5, Shield, Gamepad2, ShoppingCart } from 'lucide-react';
 import { FaHorse as Horse } from 'react-icons/fa';
 import AnimatedSection from '../components/AnimatedSection';
 import ProjectCard from '../components/ProjectCard';
@@ -8,6 +8,7 @@ import clsx from 'clsx';
 import { PROJECTS as rawProjects } from '../data/portfolioData';
 
 const iconMap: Record<string, React.ReactNode> = {
+  ShoppingCart: <ShoppingCart size={48} className="text-white" />,
   Users: <Users size={48} className="text-white/80" />,
   Hotel: <Hotel size={48} className="text-white" />,
   CheckCircle: <CheckCircle size={48} className="text-white" />,

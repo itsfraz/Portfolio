@@ -100,6 +100,16 @@ export const EDUCATION: Education[] = [
 
 export const PROJECTS: Project[] = [
   {
+    id: 10,
+    title: 'Boat Electro',
+    description: 'A full-stack MERN e-commerce platform with a customer storefront and an admin dashboard. Features real-time inventory and settings synchronization across clients using Socket.IO, role-based access control, and a responsive React UI.',
+    tags: ['React', 'NodeJs', 'MongoDB', 'FullStack'],
+    iconName: 'ShoppingCart',
+    bgGradient: 'bg-gradient-to-br from-blue-600 to-indigo-900',
+    githubUrl: 'https://github.com/itsfraz/boat-electro',
+    liveUrl: '#'
+  },
+  {
     id: 1,
     title: 'Echo Chat App',
     description: 'A real-time, highly-interactive social networking application enabling secure communication. Designed and implemented instant messaging, real-time connection status tracking, and group chat rooms using Socket.io. Configured an optimized MongoDB schema with indexing for fast message retrievals. Integrated robust JSON Web Token (JWT) based authentication and custom route guards, resulting in a secure, responsive, and low-latency user communication portal.',
