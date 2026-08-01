@@ -100,6 +100,16 @@ export const EDUCATION: Education[] = [
 
 export const PROJECTS: Project[] = [
   {
+    id: 11,
+    title: 'World Globe AI',
+    description: 'An interactive 3D spinning globe web application combining realistic geography with live demographic data and a context-aware AI assistant. Features clickable GeoJSON country borders with selection highlighting, hotkey-driven search (Ctrl+K) with flag thumbnails and ISO codes, live country statistics, and floating HUD camera controls. Engineered with a secure Express proxy backend integrating Groq Llama 3.1 8B to scope responses dynamically.',
+    tags: ['React', 'NodeJs', '3D', 'AI', 'FullStack'],
+    iconName: 'Globe',
+    bgGradient: 'bg-gradient-to-br from-cyan-600 via-blue-900 to-slate-950',
+    githubUrl: 'https://github.com/itsfraz/3D-Globe',
+    liveUrl: 'https://3-d-globe-sable.vercel.app/'
+  },
+  {
     id: 10,
     title: 'Boat Electro',
     description: 'A full-stack MERN e-commerce platform with a customer storefront and an admin dashboard. Features real-time inventory and settings synchronization across clients using Socket.IO, role-based access control, and a responsive React UI.',
@@ -107,7 +117,7 @@ export const PROJECTS: Project[] = [
     iconName: 'ShoppingCart',
     bgGradient: 'bg-gradient-to-br from-blue-600 to-indigo-900',
     githubUrl: 'https://github.com/itsfraz/boat-electro',
-    liveUrl: '#'
+    liveUrl: 'https://boat-electro-ecru.vercel.app/'
   },
   {
     id: 1,
