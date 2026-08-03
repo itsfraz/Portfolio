@@ -248,11 +248,11 @@ export default function Resume() {
 
                     {/* Social links row */}
                     <div className="mt-8 pt-6 border-t border-border-glass flex flex-wrap gap-4 justify-center md:justify-start">
-                      <a href={`https://${PROFILE.linkedin}`} target="_blank" rel="noreferrer" 
+                      <a href={`https://${PROFILE.linkedin}`} target="_blank" rel="noopener noreferrer" 
                          className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-black/5 dark:bg-white/5 border border-border-glass font-semibold text-sm hover:border-primary hover:text-primary transition-all duration-300">
                         <Linkedin size={18} className="text-[#0a66c2]" /> LinkedIn
                       </a>
-                      <a href={`https://${PROFILE.github}`} target="_blank" rel="noreferrer" 
+                      <a href={`https://${PROFILE.github}`} target="_blank" rel="noopener noreferrer" 
                          className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-black/5 dark:bg-white/5 border border-border-glass font-semibold text-sm hover:border-primary hover:text-primary transition-all duration-300">
                         <Github size={18} /> GitHub
                       </a>

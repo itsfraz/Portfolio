@@ -5,10 +5,10 @@ export default function Footer() {
     <footer className="mt-16 py-12 glass relative z-10 text-center">
       <div className="container mx-auto max-w-6xl px-4">
         <div className="flex justify-center gap-6 mb-6">
-          <a href="https://github.com/itsfraz" target="_blank" rel="noreferrer" className="text-text-muted dark:text-text-darkMuted hover:text-primary transition-colors">
+          <a href="https://github.com/itsfraz" target="_blank" rel="noopener noreferrer" className="text-text-muted dark:text-text-darkMuted hover:text-primary transition-colors">
             <Github size={28} />
           </a>
-          <a href="https://www.linkedin.com/in/faraj-ansari/" target="_blank" rel="noreferrer" className="text-text-muted dark:text-text-darkMuted hover:text-primary transition-colors">
+          <a href="https://www.linkedin.com/in/faraj-ansari/" target="_blank" rel="noopener noreferrer" className="text-text-muted dark:text-text-darkMuted hover:text-primary transition-colors">
             <Linkedin size={28} />
           </a>
         </div>

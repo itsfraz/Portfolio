@@ -69,7 +69,7 @@ export default function Contact() {
               ].map(social => {
                 const Icon = social.icon;
                 return (
-                  <a key={social.name} href={social.url} target="_blank" rel="noreferrer" 
+                  <a key={social.name} href={social.url} target="_blank" rel="noopener noreferrer" 
                      className="flex flex-col items-center justify-center w-28 h-28 rounded-2xl bg-bg-panel dark:bg-bg-darkPanel border border-border-glass dark:border-border-darkGlass text-text-main dark:text-text-darkMain hover:-translate-y-2 hover:rotate-[-3deg] hover:border-primary hover:shadow-glass transition-all duration-300">
                     <Icon size={40} className="mb-2 text-primary" />
                     <span className="font-semibold text-sm">{social.name}</span>

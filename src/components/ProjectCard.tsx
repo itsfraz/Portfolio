@@ -54,12 +54,12 @@ export default function ProjectCard({
         
         <div className="flex flex-wrap gap-3 mt-auto pt-4 border-t border-border-glass">
           {githubUrl && githubUrl !== '#' && (
-            <a href={githubUrl} target="_blank" rel="noreferrer" className="flex-1 flex items-center justify-center gap-2 py-2 px-3 text-sm font-semibold rounded-lg bg-transparent border border-border-glass text-text-main dark:text-text-darkMain hover:bg-black/5 dark:hover:bg-white/5 transition-colors">
+            <a href={githubUrl} target="_blank" rel="noopener noreferrer" className="flex-1 flex items-center justify-center gap-2 py-2 px-3 text-sm font-semibold rounded-lg bg-transparent border border-border-glass text-text-main dark:text-text-darkMain hover:bg-black/5 dark:hover:bg-white/5 transition-colors">
               <Github size={16} /> Code
             </a>
           )}
           {liveUrl && liveUrl !== '#' && (
-            <a href={liveUrl} target="_blank" rel="noreferrer" className="flex-1 flex items-center justify-center gap-2 py-2 px-3 text-sm font-semibold rounded-lg bg-primary text-white hover:bg-blue-600 transition-colors">
+            <a href={liveUrl} target="_blank" rel="noopener noreferrer" className="flex-1 flex items-center justify-center gap-2 py-2 px-3 text-sm font-semibold rounded-lg bg-primary text-white hover:bg-blue-600 transition-colors">
               <ExternalLink size={16} /> Live
             </a>
           )}
