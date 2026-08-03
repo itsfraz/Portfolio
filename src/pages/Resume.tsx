@@ -2,11 +2,9 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Briefcase, GraduationCap, Download, Cpu, Star, Calendar, MapPin, User, Mail, Phone, Globe } from 'lucide-react';
 import { FaLinkedin as Linkedin, FaGithub as Github } from 'react-icons/fa';
-import { PDFDownloadLink } from '@react-pdf/renderer';
 import AnimatedSection from '../components/AnimatedSection';
 import GlassCard from '../components/ui/GlassCard';
 import SkillBar from '../components/ui/SkillBar';
-import ResumePDF from '../components/ResumePDF';
 import { PROFILE, EXPERIENCE, EDUCATION, SKILLS } from '../data/portfolioData';
 
 interface TimelineItemProps {
@@ -70,6 +68,30 @@ function TimelineItem({ title, subtitle, duration, location, description, skills
 
 export default function Resume() {
   const [activeTab, setActiveTab] = useState<'personal' | 'experience' | 'education' | 'skills'>('personal');
+  const [isGeneratingPDF, setIsGeneratingPDF] = useState(false);
+
+  const handleDownloadPDF = async () => {
+    setIsGeneratingPDF(true);
+    try {
+      const [{ pdf }, { default: ResumePDFComponent }] = await Promise.all([
+        import('@react-pdf/renderer'),
+        import('../components/ResumePDF')
+      ]);
+      const blob = await pdf(<ResumePDFComponent />).toBlob();
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = `${PROFILE.name.replace(/\s+/g, '_')}_Resume.pdf`;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      URL.revokeObjectURL(url);
+    } catch (error) {
+      console.error('Failed to generate PDF:', error);
+    } finally {
+      setIsGeneratingPDF(false);
+    }
+  };
 
   const experienceData: TimelineItemProps[] = EXPERIENCE.map(exp => ({
     title: exp.title,
@@ -106,26 +128,22 @@ export default function Resume() {
           <span>|</span>
           <span>{PROFILE.location}</span>
           <span>|</span>
-          <span>{PROFILE.github}</span>
+          <a href={PROFILE.github.startsWith('http') ? PROFILE.github : `https://${PROFILE.github}`} target="_blank" rel="noopener noreferrer" className="text-primary font-bold hover:underline">GitHub ↗</a>
           <span>|</span>
-          <span>{PROFILE.linkedin}</span>
+          <a href={PROFILE.linkedin.startsWith('http') ? PROFILE.linkedin : `https://${PROFILE.linkedin}`} target="_blank" rel="noopener noreferrer" className="text-primary font-bold hover:underline">LinkedIn ↗</a>
         </div>
       </AnimatedSection>
 
       {/* Action CTA Panel */}
       <AnimatedSection delay={0.1} className="flex justify-center gap-4 mb-12 print:hidden">
-        <PDFDownloadLink
-          document={<ResumePDF />}
-          fileName={`${PROFILE.name.replace(/\s+/g, '_')}_Resume.pdf`}
+        <button
+          onClick={handleDownloadPDF}
+          disabled={isGeneratingPDF}
           className="btn btn-primary flex items-center gap-2"
         >
-          {({ loading }) => (
-            <>
-              <Download size={18} />
-              {loading ? 'Preparing PDF...' : 'Download Resume'}
-            </>
-          )}
-        </PDFDownloadLink>
+          <Download size={18} />
+          {isGeneratingPDF ? 'Preparing PDF...' : 'Download Resume'}
+        </button>
       </AnimatedSection>
 
       {/* CV Grid Layout */}

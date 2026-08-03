@@ -26,7 +26,7 @@ const PROJECTS = rawProjects.map(p => ({
   icon: iconMap[p.iconName] || <Box size={48} className="text-white" />
 }));
 
-const FILTERS = ['All', 'React', 'JavaScript', 'FullStack', 'AI', 'Animation'];
+const FILTERS = ['All', 'JavaScript', 'FullStack', 'AI'];
 
 export default function Projects() {
   const [activeFilter, setActiveFilter] = useState('All');

@@ -2,7 +2,6 @@ import { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Send, CheckCircle, Loader2, Code, Mail, Phone } from 'lucide-react';
 import { FaLinkedin as Linkedin, FaGithub as Github } from 'react-icons/fa';
-import emailjs from '@emailjs/browser';
 import AnimatedSection from '../components/AnimatedSection';
 import GlassCard from '../components/ui/GlassCard';
 import { PROFILE } from '../data/portfolioData';
@@ -12,7 +11,7 @@ export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
@@ -32,18 +31,18 @@ export default function Contact() {
       return;
     }
 
-    emailjs.sendForm(serviceId, templateId, formRef.current!, publicKey)
-      .then(() => {
-        setIsSubmitting(false);
-        setIsSuccess(true);
-        if (formRef.current) formRef.current.reset();
-        setTimeout(() => setIsSuccess(false), 5000);
-      })
-      .catch((error) => {
-        console.error('Email sending failed:', error);
-        setIsSubmitting(false);
-        alert('Failed to send message. Please try again later.');
-      });
+    try {
+      const { default: emailjs } = await import('@emailjs/browser');
+      await emailjs.sendForm(serviceId, templateId, formRef.current!, publicKey);
+      setIsSubmitting(false);
+      setIsSuccess(true);
+      if (formRef.current) formRef.current.reset();
+      setTimeout(() => setIsSuccess(false), 5000);
+    } catch (error) {
+      console.error('Email sending failed:', error);
+      setIsSubmitting(false);
+      alert('Failed to send message. Please try again later.');
+    }
   };
 
   return (

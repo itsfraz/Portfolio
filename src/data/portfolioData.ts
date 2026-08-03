@@ -152,8 +152,8 @@ export const PROJECTS: Project[] = [
   {
     id: 4,
     title: 'Wizard Diary',
-    description: 'An interactive AI-powered "magic diary" wrapping a real-time LLM chat experience in an immersive, physically-animated book UI.',
-    tags: ['React', 'JavaScript', 'Animation'],
+    description: 'An interactive AI-powered "magic diary" application integrating a real-time Large Language Model (LLM) assistant into an immersive, physically-animated book interface.',
+    tags: ['AI', 'React', 'JavaScript'],
     iconName: 'BookOpen',
     bgGradient: 'bg-gradient-to-br from-[#1f1c2c] to-[#928dab]',
     liveUrl: 'https://wizard-diary.vercel.app/'

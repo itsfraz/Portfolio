@@ -45,42 +45,47 @@ function getDynamicStyles() {
     page: {
       padding: padding,
       fontSize: fontSize,
-      fontFamily: 'Helvetica',
-      color: '#0f172a', // Dark text color
+      fontFamily: 'Times-Roman',
+      color: '#000000', // Pure black text color
       lineHeight: lineHeight,
     },
     header: {
       marginBottom: sectionMargin,
-      borderBottom: '1px solid #94a3b8', // Darker border
+      borderBottom: '1px dashed #000000', // Crisp black border
       paddingBottom: 8,
     },
     name: {
       fontSize: nameSize,
-      fontFamily: 'Helvetica-Bold',
-      color: '#0f172a', // Dark text
+      fontFamily: 'Times-Bold',
+      color: '#000000',
       letterSpacing: 0.5,
     },
     title: {
       fontSize: titleSize,
-      color: '#1d4ed8', // Rich dark blue primary accent color
-      fontFamily: 'Helvetica-Bold',
-      marginTop: 12, // Increased spacing between name and title
+      color: '#000000',
+      fontFamily: 'Times-Bold',
+      marginTop: 12,
     },
     contactRow: {
       flexDirection: 'row',
       flexWrap: 'wrap',
       marginTop: 8,
       fontSize: fontSize - 1,
-      color: '#1e293b', // Darker text for contact details
+      color: '#000000',
+    },
+    headerLink: {
+      color: '#000000',
+      fontFamily: 'Times-Bold',
+      textDecoration: 'underline',
     },
     section: {
       marginBottom: sectionMargin,
     },
     sectionTitle: {
       fontSize: fontSize + 1.5,
-      fontFamily: 'Helvetica-Bold',
-      color: '#0f172a', // Dark text
-      borderBottom: '1px solid #475569', // Darker separator
+      fontFamily: 'Times-Bold',
+      color: '#000000',
+      borderBottom: '1px solid #000000',
       paddingBottom: 2,
       marginBottom: sectionMargin / 2,
       textTransform: 'uppercase',
@@ -92,22 +97,22 @@ function getDynamicStyles() {
     entryHeader: {
       flexDirection: 'row',
       justifyContent: 'space-between',
-      fontFamily: 'Helvetica-Bold',
-      color: '#0f172a', // Dark text
+      fontFamily: 'Times-Bold',
+      color: '#000000',
       fontSize: fontSize,
     },
     entrySubheader: {
       flexDirection: 'row',
       justifyContent: 'space-between',
-      color: '#1e293b', // Darker text
+      color: '#000000',
       fontSize: fontSize - 0.5,
       marginTop: 1.5,
     },
     institution: {
-      fontFamily: 'Helvetica-Oblique',
+      fontFamily: 'Times-Italic',
     },
     date: {
-      fontFamily: 'Helvetica',
+      fontFamily: 'Times-Roman',
     },
     bulletList: {
       marginTop: 3,
@@ -116,11 +121,11 @@ function getDynamicStyles() {
       flexDirection: 'row',
       marginBottom: 2.5,
       fontSize: fontSize - 1,
-      color: '#1e293b', // Darker text
+      color: '#000000',
     },
     bulletSign: {
       width: 10,
-      fontFamily: 'Helvetica-Bold',
+      fontFamily: 'Times-Bold',
     },
     bulletText: {
       flex: 1,
@@ -131,14 +136,14 @@ function getDynamicStyles() {
     },
     skillsLabel: {
       width: 110,
-      fontFamily: 'Helvetica-Bold',
+      fontFamily: 'Times-Bold',
       fontSize: fontSize - 0.5,
-      color: '#0f172a', // Dark text
+      color: '#000000',
     },
     skillsValue: {
       flex: 1,
       fontSize: fontSize - 1,
-      color: '#1e293b', // Darker text
+      color: '#000000',
     },
     projectHeader: {
       flexDirection: 'row',
@@ -146,19 +151,19 @@ function getDynamicStyles() {
       alignItems: 'center',
     },
     projectTitle: {
-      fontFamily: 'Helvetica-Bold',
+      fontFamily: 'Times-Bold',
       fontSize: fontSize - 0.5,
-      color: '#0f172a', // Dark text
+      color: '#000000',
     },
     projectLink: {
       fontSize: fontSize - 1,
-      color: '#1d4ed8',
-      fontFamily: 'Helvetica-Bold',
-      textDecoration: 'none',
+      color: '#000000',
+      fontFamily: 'Times-Bold',
+      textDecoration: 'underline',
     },
     projectDesc: {
       fontSize: fontSize - 1,
-      color: '#1e293b', // Darker text
+      color: '#000000',
       marginTop: 1.5,
       lineHeight: 1.35,
     }
@@ -177,14 +182,21 @@ export default function ResumePDF() {
           <Text style={styles.name}>{PROFILE.name}</Text>
           <Text style={styles.title}>{PROFILE.title}</Text>
           <View style={styles.contactRow}>
-            <Text>{PROFILE.email}   |   {PROFILE.phone}   |   {PROFILE.location}   |   {PROFILE.github}   |   {PROFILE.linkedin}</Text>
+            <Text>{PROFILE.email}   |   {PROFILE.phone}   |   {PROFILE.location}   |   </Text>
+            <Link src={PROFILE.github.startsWith('http') ? PROFILE.github : `https://${PROFILE.github}`} style={styles.headerLink}>
+              GitHub ↗
+            </Link>
+            <Text>   |   </Text>
+            <Link src={PROFILE.linkedin.startsWith('http') ? PROFILE.linkedin : `https://${PROFILE.linkedin}`} style={styles.headerLink}>
+              LinkedIn ↗
+            </Link>
           </View>
         </View>
 
         {/* Profile Summary */}
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>Professional Summary</Text>
-          <Text style={{ fontSize: styles.page.fontSize ? (styles.page.fontSize as number) - 0.8 : 9, color: '#1e293b', lineHeight: 1.4 }}>
+          <Text style={{ fontSize: styles.page.fontSize ? (styles.page.fontSize as number) - 0.8 : 9, color: '#000000', lineHeight: 1.4 }}>
             {PROFILE.summary}
           </Text>
         </View>
@@ -266,7 +278,7 @@ export default function ResumePDF() {
               <View key={idx} style={{ marginBottom: idx === TOP_PROJECTS.length - 1 ? 0 : 8 }}>
                 <View style={styles.projectHeader}>
                   <Text style={styles.projectTitle}>
-                    {proj.title} <Text style={{ fontFamily: 'Helvetica-Oblique', color: '#475569', fontSize: styles.projectTitle.fontSize ? (styles.projectTitle.fontSize as number) - 0.5 : 8.5 }}>({proj.tags.join(', ')})</Text>
+                    {proj.title} <Text style={{ fontFamily: 'Times-Italic', color: '#000000', fontSize: styles.projectTitle.fontSize ? (styles.projectTitle.fontSize as number) - 0.5 : 8.5 }}>({proj.tags.join(', ')})</Text>
                   </Text>
                   {proj.liveUrl && (
                     <Link src={proj.liveUrl} style={styles.projectLink}>

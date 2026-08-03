@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { TypeAnimation } from 'react-type-animation';
-import { Layers, Zap, Layout } from 'lucide-react';
+import { Layers, Zap, Layout, Rocket, Send, ArrowRight } from 'lucide-react';
 import { FaReact, FaNodeJs } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import AnimatedSection from '../components/AnimatedSection';
@@ -8,14 +8,10 @@ import TechMarquee from '../components/TechMarquee';
 import GlassCard from '../components/ui/GlassCard';
 import SkillBar from '../components/ui/SkillBar';
 
-import Hero3D from '../components/Hero3D';
-
 export default function Home() {
   return (
     <div>
       <section className="min-h-[90vh] flex flex-col justify-center items-center pt-20 relative overflow-hidden text-center">
-        {/* 3D background */}
-        <Hero3D />
         
         <div className="z-10 max-w-4xl px-4 relative mt-10">
           <motion.div 
@@ -26,7 +22,7 @@ export default function Home() {
           >
             <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary to-secondary blur-xl opacity-50 animate-pulse-glow -z-10"></div>
             <div className="w-full h-full rounded-full bg-gradient-to-br from-primary to-secondary p-1">
-               <img src="/Resource/profile.jpg" alt="Mohd Faraj Ansari" className="w-full h-full object-cover rounded-full border-4 border-bg-body dark:border-bg-dark" />
+               <img src="/Resource/profile.webp" alt="Mohd Faraj Ansari" width="192" height="192" fetchPriority="high" className="w-full h-full object-cover rounded-full border-4 border-bg-body dark:border-bg-dark" />
             </div>
           </motion.div>
 
@@ -74,10 +70,10 @@ export default function Home() {
             className="flex flex-wrap justify-center gap-4"
           >
             <Link to="/projects" className="btn btn-primary flex items-center gap-2">
-              <i className="fas fa-rocket"></i> View My Work
+              <Rocket size={18} /> View My Work
             </Link>
             <Link to="/contact" className="btn btn-glass flex items-center gap-2">
-              <i className="fas fa-paper-plane"></i> Let's Talk
+              <Send size={18} /> Let's Talk
             </Link>
           </motion.div>
         </div>
@@ -126,7 +122,7 @@ export default function Home() {
               I specialize in building scalable, real-time applications using the <span className="text-gradient">MERN Stack</span>. My code is clean, modular, and optimized for performance.
             </p>
             <Link to="/resume" className="btn btn-glass inline-flex items-center gap-2">
-              Download CV <i className="fas fa-arrow-right"></i>
+              Download CV <ArrowRight size={18} />
             </Link>
           </AnimatedSection>
           
