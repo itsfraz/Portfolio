@@ -1,3 +1,5 @@
+import udemyCert from '../assets/Udemy Complete Bootcamp.jpg';
+
 export interface Project {
   id: number;
   title: string;
@@ -33,6 +35,7 @@ export interface Certification {
   date: string;
   credentialId?: string;
   link?: string;
+  image?: string;
 }
 
 export interface Profile {
@@ -207,18 +210,28 @@ export const PROJECTS: Project[] = [
 
 export const CERTIFICATIONS: Certification[] = [
   {
-    title: 'Full Stack Web Development Certification',
-    issuer: 'Udemy / Online Academy',
-    date: '2024',
-    credentialId: 'UC-xxxxxx',
-    link: '#'
+    title: 'The Web Developer Bootcamp 2026',
+    issuer: 'Udemy / Online',
+    date: '2026',
+    credentialId: '',
+    link: 'https://drive.google.com/file/d/1PXDoKf6CH67Fjw7SpykcuOQ1lr_4nS_6/view?usp=sharing',
+    image: udemyCert
   },
   {
     title: 'AWS Certified Cloud Practitioner (In Progress)',
     issuer: 'Amazon Web Services',
     date: 'Expected 2026',
     credentialId: '',
-    link: '#'
+    link: '#',
+    image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop'
+  },
+  {
+    title: 'React Advanced Concepts',
+    issuer: 'Frontend Masters',
+    date: '2023',
+    credentialId: 'FM-123456',
+    link: '#',
+    image: 'https://images.unsplash.com/photo-1633356122544-f134324a6cee?q=80&w=2070&auto=format&fit=crop'
   }
 ];
 

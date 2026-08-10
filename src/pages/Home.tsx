@@ -7,7 +7,6 @@ import AnimatedSection from '../components/AnimatedSection';
 import TechMarquee from '../components/TechMarquee';
 import GlassCard from '../components/ui/GlassCard';
 import SkillBar from '../components/ui/SkillBar';
-
 export default function Home() {
   return (
     <div>

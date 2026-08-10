@@ -7,6 +7,7 @@ const Home = lazy(() => import('./pages/Home'));
 const Projects = lazy(() => import('./pages/Projects'));
 const Resume = lazy(() => import('./pages/Resume'));
 const Contact = lazy(() => import('./pages/Contact'));
+const Certificates = lazy(() => import('./pages/Certificates'));
 
 function PageLoader() {
   return (
@@ -27,6 +28,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/projects" element={<Projects />} />
               <Route path="/resume" element={<Resume />} />
+              <Route path="/certificates" element={<Certificates />} />
               <Route path="/contact" element={<Contact />} />
             </Routes>
           </Suspense>
