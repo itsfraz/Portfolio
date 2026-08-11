@@ -1,4 +1,6 @@
 import udemyCert from '../assets/Udemy Complete Bootcamp.jpg';
+import javaBasicsCert from '../assets/Java_Basics.png';
+import pythonCert from '../assets/Python.png';
 
 export interface Project {
   id: number;
@@ -218,20 +220,20 @@ export const CERTIFICATIONS: Certification[] = [
     image: udemyCert
   },
   {
-    title: 'AWS Certified Cloud Practitioner (In Progress)',
-    issuer: 'Amazon Web Services',
-    date: 'Expected 2026',
+    title: 'Java Basics',
+    issuer: 'HackerRank / Online',
+    date: '2024',
     credentialId: '',
-    link: '#',
-    image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop'
+    link: 'https://drive.google.com/file/d/1buxeWsOLKoxILODw7eVGanHJFzClXWhn/view?usp=sharing',
+    image: javaBasicsCert
   },
   {
-    title: 'React Advanced Concepts',
-    issuer: 'Frontend Masters',
-    date: '2023',
-    credentialId: 'FM-123456',
-    link: '#',
-    image: 'https://images.unsplash.com/photo-1633356122544-f134324a6cee?q=80&w=2070&auto=format&fit=crop'
+    title: 'Python Data Science',
+    issuer: 'Lets Upgrade / Online',
+    date: '2022',
+    credentialId: '',
+    link: 'https://drive.google.com/file/d/1NRyskUxJZFXG00J3Ca4a5iaR8ZO7mmUZ/view?usp=sharing',
+    image: pythonCert
   }
 ];
 
