@@ -310,7 +310,7 @@ export default function Resume() {
                     </GlassCard>
 
                     <GlassCard>
-                      <h4 className="text-lg font-bold mb-6 flex items-center gap-2 text-secondary"><Star size={18} /> Backend & Architecture</h4>
+                      <h4 className="text-lg font-bold mb-6 flex items-center gap-2 text-primary"><Star size={18} /> Backend & Architecture</h4>
                       {SKILLS.backend.map((s, idx) => (
                         <SkillBar key={idx} name={s.name} percentage={s.percentage} />
                       ))}

@@ -2,9 +2,9 @@ import { FaGithub as Github, FaLinkedin as Linkedin } from 'react-icons/fa';
 
 export default function Footer() {
   return (
-    <footer className="mt-16 py-12 glass relative z-10 text-center">
+    <footer className="mt-8 py-6 glass relative z-10 text-center">
       <div className="container mx-auto max-w-6xl px-4">
-        <div className="flex justify-center gap-6 mb-6">
+        <div className="flex justify-center gap-6 mb-3">
           <a href="https://github.com/itsfraz" target="_blank" rel="noopener noreferrer" className="text-text-muted dark:text-text-darkMuted hover:text-primary transition-colors">
             <Github size={28} />
           </a>

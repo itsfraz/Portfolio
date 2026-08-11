@@ -221,7 +221,7 @@ export const CERTIFICATIONS: Certification[] = [
   },
   {
     title: 'Java Basics',
-    issuer: 'HackerRank / Online',
+    issuer: 'HackerRank / Online', 
     date: '2024',
     credentialId: '',
     link: 'https://drive.google.com/file/d/1buxeWsOLKoxILODw7eVGanHJFzClXWhn/view?usp=sharing',

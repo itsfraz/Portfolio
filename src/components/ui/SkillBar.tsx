@@ -14,10 +14,9 @@ export default function SkillBar({ name, percentage }: SkillBarProps) {
       </div>
       <div className="h-2 w-full bg-black/10 dark:bg-white/10 rounded-full overflow-hidden">
         <motion.div 
-          className="h-full bg-gradient-to-r from-primary to-secondary rounded-full origin-left"
-          initial={{ scaleX: 0 }}
-          whileInView={{ scaleX: percentage / 100 }}
-          viewport={{ once: true, margin: "-50px" }}
+          className="h-full bg-gradient-to-r from-primary to-secondary rounded-full"
+          initial={{ width: 0 }}
+          animate={{ width: `${percentage}%` }}
           transition={{ duration: 1.2, ease: "easeInOut" }}
         />
       </div>
