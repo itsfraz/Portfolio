@@ -1,6 +1,15 @@
 import udemyCert from '../assets/Udemy Complete Bootcamp.jpg';
 import javaBasicsCert from '../assets/Java_Basics.png';
 import pythonCert from '../assets/Python.png';
+import focusAiImg from '../assets/FocusAI.png';
+import worldGlobeImg from '../assets/3D Globe AI.png';
+import boatElectroImg from '../assets/Boat Electro.png';
+import echoChatImg from '../assets/Echo Chat App.png';
+import pearlHotelImg from '../assets/Pearl Hotel.png';
+import habitTrackerImg from '../assets/Habit Tracker.png';
+import wizardDiaryImg from '../assets/Wizard Diary.png';
+import multiProjectImg from '../assets/Multi Project.png';
+import blackJackImg from '../assets/BlackJack Edition.png';
 
 export interface Project {
   id: number;
@@ -11,6 +20,7 @@ export interface Project {
   bgGradient: string;
   githubUrl?: string;
   liveUrl?: string;
+  image?: string;
 }
 
 export interface Experience {
@@ -112,7 +122,8 @@ export const PROJECTS: Project[] = [
     iconName: 'Globe',
     bgGradient: 'bg-gradient-to-br from-cyan-600 via-blue-900 to-slate-950',
     githubUrl: 'https://github.com/itsfraz/3D-Globe',
-    liveUrl: 'https://3-d-globe-sable.vercel.app/'
+    liveUrl: 'https://3-d-globe-sable.vercel.app/',
+    image: worldGlobeImg
   },
   {
     id: 10,
@@ -122,7 +133,8 @@ export const PROJECTS: Project[] = [
     iconName: 'ShoppingCart',
     bgGradient: 'bg-gradient-to-br from-blue-600 to-indigo-900',
     githubUrl: 'https://github.com/itsfraz/boat-electro',
-    liveUrl: 'https://boat-electro-ecru.vercel.app/'
+    liveUrl: 'https://boat-electro-ecru.vercel.app/',
+    image: boatElectroImg
   },
   {
     id: 1,
@@ -132,7 +144,8 @@ export const PROJECTS: Project[] = [
     iconName: 'Users',
     bgGradient: 'bg-gradient-to-br from-gray-900 to-gray-800',
     githubUrl: 'https://github.com/itsfraz/FriendApp',
-    liveUrl: 'https://echo-chat-app-six.vercel.app/login'
+    liveUrl: 'https://echo-chat-app-six.vercel.app/login',
+    image: echoChatImg
   },
   {
     id: 12,
@@ -142,7 +155,8 @@ export const PROJECTS: Project[] = [
     iconName: 'Target',
     bgGradient: 'bg-gradient-to-br from-violet-600 to-fuchsia-900',
     githubUrl: 'https://github.com/itsfraz/AI-Productivity-SaaS',
-    liveUrl: 'https://ai-productivity-saa-s.vercel.app'
+    liveUrl: 'https://ai-productivity-saa-s.vercel.app',
+    image: focusAiImg
   },
   {
     id: 2,
@@ -152,7 +166,8 @@ export const PROJECTS: Project[] = [
     iconName: 'Hotel',
     bgGradient: 'bg-gradient-to-br from-[#2b5876] to-[#4e4376]',
     githubUrl: 'https://github.com/itsfraz/Pearl-Hotel.git',
-    liveUrl: 'https://pearl-hotel-eight.vercel.app/'
+    liveUrl: 'https://pearl-hotel-eight.vercel.app/',
+    image: pearlHotelImg
   },
   {
     id: 3,
@@ -162,7 +177,8 @@ export const PROJECTS: Project[] = [
     iconName: 'CheckCircle',
     bgGradient: 'bg-gradient-to-br from-indigo-500 to-purple-600',
     githubUrl: 'https://github.com/itsfraz/Habit-tracker-app.git',
-    liveUrl: 'https://habit-tracker-app-seven-xi.vercel.app/'
+    liveUrl: 'https://habit-tracker-app-seven-xi.vercel.app/',
+    image: habitTrackerImg
   },
   {
     id: 4,
@@ -171,7 +187,8 @@ export const PROJECTS: Project[] = [
     tags: ['AI', 'React', 'JavaScript'],
     iconName: 'BookOpen',
     bgGradient: 'bg-gradient-to-br from-[#1f1c2c] to-[#928dab]',
-    liveUrl: 'https://wizard-diary.vercel.app/'
+    liveUrl: 'https://wizard-diary.vercel.app/',
+    image: wizardDiaryImg
   },
   {
     id: 5,
@@ -180,7 +197,8 @@ export const PROJECTS: Project[] = [
     tags: ['HTML', 'CSS', 'JavaScript'],
     iconName: 'Box',
     bgGradient: 'bg-[radial-gradient(circle_at_center,_#2b32b2,_#1488cc)]',
-    liveUrl: 'https://app-all-in-one.netlify.app/'
+    liveUrl: 'https://app-all-in-one.netlify.app/',
+    image: multiProjectImg
   },
   {
     id: 6,
@@ -189,7 +207,8 @@ export const PROJECTS: Project[] = [
     tags: ['React', 'Tailwind'],
     iconName: 'Dice5',
     bgGradient: 'bg-gradient-to-br from-[#1a1a1a] to-[#dc2f02]',
-    liveUrl: 'https://blackjackgamepro.onrender.com'
+    liveUrl: 'https://blackjackgamepro.onrender.com',
+    image: blackJackImg
   },
   {
     id: 7,

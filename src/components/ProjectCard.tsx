@@ -11,10 +11,11 @@ interface ProjectCardProps {
   bgGradient: string;
   githubUrl?: string;
   liveUrl?: string;
+  image?: string;
 }
 
 export default function ProjectCard({ 
-  title, description, tags, icon, bgGradient, githubUrl, liveUrl 
+  title, description, tags, icon, bgGradient, githubUrl, liveUrl, image 
 }: ProjectCardProps) {
   const [isExpanded, setIsExpanded] = useState(false);
   const maxLength = 120;
@@ -23,10 +24,19 @@ export default function ProjectCard({
   return (
     <GlassCard className="flex flex-col p-0 overflow-hidden h-full interactive hover:-translate-y-2">
       <div className={`h-48 shrink-0 relative overflow-hidden flex items-center justify-center ${bgGradient}`}>
-        <div className="absolute inset-0 bg-black/20" />
-        <div className="relative z-10 drop-shadow-lg transform transition-transform duration-500 hover:scale-110">
-          {icon}
-        </div>
+        {image && (
+          <img 
+            src={image} 
+            alt={`${title} thumbnail`} 
+            className="w-full h-full object-cover absolute inset-0 z-0 transition-transform duration-500 hover:scale-110" 
+          />
+        )}
+        <div className="absolute inset-0 bg-black/20 z-0" />
+        {!image && (
+          <div className="relative z-10 drop-shadow-lg transform transition-transform duration-500 hover:scale-110">
+            {icon}
+          </div>
+        )}
       </div>
       <div className="p-6 flex flex-col flex-grow">
         <h3 className="text-xl font-bold mb-3">{title}</h3>
