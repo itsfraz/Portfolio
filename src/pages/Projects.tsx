@@ -36,6 +36,17 @@ export default function Projects() {
     activeFilter === 'All' ? true : project.tags.includes(activeFilter)
   );
 
+  const getProjectPriority = (tags: string[]) => {
+    if (tags.includes('AI')) return 1;
+    if (tags.includes('FullStack')) return 2;
+    if (tags.includes('React')) return 3;
+    return 4;
+  };
+
+  const sortedProjects = [...filteredProjects].sort((a, b) => {
+    return getProjectPriority(a.tags) - getProjectPriority(b.tags);
+  });
+
   return (
     <div className="container mx-auto max-w-6xl px-4 py-12">
       <AnimatedSection className="text-center mb-12">
@@ -64,7 +75,7 @@ export default function Projects() {
 
       <motion.div layout className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         <AnimatePresence>
-          {filteredProjects.map(project => (
+          {sortedProjects.map(project => (
             <motion.div
               key={project.id}
               layout
