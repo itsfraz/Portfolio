@@ -135,6 +135,16 @@ export const PROJECTS: Project[] = [
     liveUrl: 'https://echo-chat-app-six.vercel.app/login'
   },
   {
+    id: 12,
+    title: 'FocusAI',
+    description: 'A full-stack, AI-powered productivity suite that combines task management, habit tracking, focus sessions, and machine-generated performance coaching into a single real-time dashboard.',
+    tags: ['React', 'NodeJs', 'MongoDB', 'AI', 'FullStack'],
+    iconName: 'Target',
+    bgGradient: 'bg-gradient-to-br from-violet-600 to-fuchsia-900',
+    githubUrl: 'https://github.com/itsfraz/AI-Productivity-SaaS',
+    liveUrl: 'https://ai-productivity-saa-s.vercel.app'
+  },
+  {
     id: 2,
     title: 'Pearl Hotel',
     description: 'A comprehensive, enterprise-level hospitality booking application. Features secure user accounts, dynamic search filters for room availability, and an interactive reservation calendar. Fully integrated Razorpay payment gateway with Webhook verification for secure financial transactions. Developed a robust administrator dashboard providing real-time data analytics, room status updates, user management controls, and transactional reporting tools.',

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Users, Hotel, CheckCircle, BookOpen, Box, Dice5, Shield, Gamepad2, ShoppingCart, Globe } from 'lucide-react';
+import { Users, Hotel, CheckCircle, BookOpen, Box, Dice5, Shield, Gamepad2, ShoppingCart, Globe, Target } from 'lucide-react';
 import { FaHorse as Horse } from 'react-icons/fa';
 import AnimatedSection from '../components/AnimatedSection';
 import ProjectCard from '../components/ProjectCard';
@@ -19,6 +19,7 @@ const iconMap: Record<string, React.ReactNode> = {
   Shield: <Shield size={48} className="text-white" />,
   Horse: <Horse size={48} className="text-white" />,
   Gamepad2: <Gamepad2 size={48} className="text-gray-900" />,
+  Target: <Target size={48} className="text-white" />,
 };
 
 const PROJECTS = rawProjects.map(p => ({
