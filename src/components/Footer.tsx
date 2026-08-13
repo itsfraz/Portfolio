@@ -1,4 +1,5 @@
 import { FaGithub as Github, FaLinkedin as Linkedin } from 'react-icons/fa';
+import { Coffee } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -12,8 +13,8 @@ export default function Footer() {
             <Linkedin size={28} />
           </a>
         </div>
-        <p className="text-text-muted dark:text-text-darkMuted font-medium">
-          &copy; 2025 Mohd Faraj Ansari. Crafted with <span className="text-red-500">♥</span> and Coffee.
+        <p className="text-text-muted dark:text-text-darkMuted font-medium flex items-center justify-center gap-1">
+          &copy; 2025 Mohd Faraj Ansari. Crafted with <span className="text-red-500">♥</span> and <strong className="font-bold text-text-main dark:text-text-darkMain text-lg">चाय</strong> <Coffee size={18} className="text-amber-800 dark:text-amber-500" />
         </p>
       </div>
     </footer>
