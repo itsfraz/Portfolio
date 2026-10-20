@@ -122,7 +122,7 @@ export const PROJECTS: Project[] = [
     iconName: 'Globe',
     bgGradient: 'bg-gradient-to-br from-cyan-600 via-blue-900 to-slate-950',
     githubUrl: 'https://github.com/itsfraz/3D-Globe',
-    liveUrl: 'https://3-d-globe-sable.vercel.app/',
+    liveUrl: 'https://threed-globe-1-4eia.onrender.com',
     image: worldGlobeImg
   },
   {
